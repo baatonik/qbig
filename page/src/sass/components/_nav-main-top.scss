@@ -1,0 +1,98 @@
+@use 'utilities' as u;
+@use 'animations' as a;
+
+.nav {
+	position: fixed;
+	top: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100%;
+	transform: translateX(100%);
+	transition: transform 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+	background-image: u.$red-gradient-solid;
+	z-index: 100;
+
+	&--active {
+		transform: translateX(0);
+	}
+
+	&__items-item {
+		position: relative;
+		display: block;
+		margin: 0.5em 0;
+		padding: 0.5em 2em;
+		font-size: 2.8rem;
+		color: u.$pure-white;
+		text-decoration: none;
+
+		&::before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 3px;
+			height: 100%;
+			transform: scaleY(0);
+			background-color: u.$light-white;
+			transition: transform 0.3s;
+			content: '';
+		}
+
+		&:hover::before {
+			transform: scaleY(1);
+		}
+	}
+}
+
+.nav-items-animation {
+	animation: navItemsAnimation 1s both;
+}
+
+@media (min-width: 768px) {
+
+	.nav {
+		height: 25em;
+		transform: translateX(0);
+		overflow: hidden;
+		box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+
+		&__items {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+
+			&-item {
+				display: flex;
+				line-height: 4em;
+				font-size: 1.5rem;
+				outline: none;
+				transition: background-color 0.3s;
+
+				&:hover {
+					background-color: u.$focus-color;
+				}
+
+				&:focus {
+					background-color: u.$focus-color;
+				}
+
+				&:hover::before {
+					transform: scaleY(0);
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.nav {
+		height: 28em;
+
+		&__items {
+			&-item {
+				font-size: 1.8rem;
+			}
+		}
+	}
+}

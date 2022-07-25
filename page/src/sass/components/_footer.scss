@@ -1,0 +1,126 @@
+@use 'utilities' as u;
+
+.footer {
+	overflow: hidden;
+
+	&__nav {
+		display: none;
+	}
+
+	hr {
+		width: 100%;
+	}
+
+	&__box {
+		padding: 10em;
+
+		&-desktop {
+			display: none;
+		}
+
+		&-title {
+			margin-bottom: 0.5em;
+			font-size: 5rem;
+			font-weight: bold;
+			text-shadow: 1px 1px 1px #1f1f1f, 1px 2px 1px #1f1f1f, 1px 3px 1px #1f1f1f,
+				1px 4px 1px #1f1f1f, 1px 5px 1px #1f1f1f, 1px 6px 1px #1f1f1f,
+				1px 7px 1px #1f1f1f, 1px 8px 1px #1f1f1f, 1px 9px 1px #1f1f1f,
+				1px 10px 1px #1f1f1f, 1px 18px 6px rgba(16, 16, 16, 0.4),
+				1px 22px 10px rgba(16, 16, 16, 0.2), 1px 25px 35px rgba(16, 16, 16, 0.2),
+				1px 30px 60px rgba(16, 16, 16, 0.4);
+
+			&--span {
+				font-size: 7rem;
+			}
+		}
+
+		&-social {
+			padding: 1em 0;
+		}
+
+		&-link {
+			padding: 0 0.3em;
+			color: u.$light-white;
+			font-size: 3.6rem;
+			text-decoration: none;
+			transition: color 0.3s;
+			outline: none;
+
+			&:first-child {
+				padding-left: 0;
+			}
+
+			&:hover {
+				color: u.$focus-color;
+			}
+
+			&:focus {
+				color: u.$focus-color;
+			}
+		}
+
+		p {
+			// padding: 1em 1em;
+			font-size: 1.4rem;
+			line-height: 1.3em;
+		}
+	}
+
+	&__bottom-text {
+		padding: 0.8em 0;
+		font-size: 2.5rem;
+		text-align: center;
+	}
+}
+
+@media (min-width: 576px) {
+	.footer {
+		padding: 0 1em;
+
+		&__box {
+			p {
+				font-size: 1.6rem;
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.footer {
+		&__boxes {
+			display: flex;
+			justify-content: center;
+			align-items: flex-start;
+			padding: 10em 10em;
+		}
+
+		&__nav {
+			display: block;
+			align-self: center;
+			padding: 0 10em;
+
+			&__items {
+				display: flex;
+				flex-direction: column;
+
+				&-item {
+					padding: 0.2em .5em;
+					font-size: 1.7rem;
+					color: u.$light-white;
+					text-decoration: none;
+					outline: none;
+					border-radius: 5px;
+					transition: background-color 0.4s;
+
+					&:hover {
+						background-color: u.$focus-color;
+					}
+
+					&:focus {
+						background-color: u.$focus-color;
+					}
+				}
+			}
+		}
+	}
+}

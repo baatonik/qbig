@@ -1,0 +1,98 @@
+@use '../utilities/' as u;
+
+.projects-carousel {
+	padding: 5em 5em;
+	margin-bottom: 10em;
+
+	.card {
+		position: relative;
+        height: 300px;
+		margin: 0 10em;
+		border: 1px solid u.$light-white;
+		border-radius: 10px;
+		transition: transform 0.3s;
+		overflow: hidden;
+
+		img {
+			position: absolute;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		&-body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+			bottom: 5%;
+			height: 20%;
+			width: 90%;
+			left: 50%;
+			transform: translateX(-50%);
+			overflow: hidden;
+
+			p {
+				position: absolute;
+				font-size: 2rem;
+				text-align: center;
+				color: u.$pure-white;
+				text-transform: uppercase;
+				z-index: 1;
+			}
+
+			&::after {
+				position: absolute;
+				content: '';
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0, 0, 0, 0.8);
+				border-radius: 10px;
+			}
+		}
+
+		&:hover {
+			transform: scale(0.96);
+		}
+	}
+}
+
+.slick-dots {
+	display: flex;
+	justify-content: center;
+	padding: 15em 0;
+	list-style-type: none;
+	
+		li {
+			margin: 0 4em;
+		}
+	
+		button {
+			display: block;
+			width: 1em;
+			height: 1em;
+			
+			border: none;
+			border-radius: 100%;
+			background-color: u.$light-white;
+			
+			text-indent: -9999px;
+            cursor: pointer;
+		}
+	
+		li.slick-active button {
+			background-color: u.$black;
+		}
+	
+}
+
+@media (min-width: 576px) {
+	.projects-carousel {
+		padding: 0 10em;
+	}
+}
+
+@media (min-width: 992px) {
+	.projects-carousel {
+		display: none;
+	}
+}

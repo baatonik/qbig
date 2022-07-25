@@ -1,0 +1,17 @@
+@use 'utilities' as u;
+
+@mixin heroImages($bgImg) {
+	background-image: u.$gray-gradient, url($bgImg);
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+@mixin burgerBtn {
+	position: absolute;
+	right: 0;
+	height: 3px;
+	content: '';
+	background-color: u.$pure-white;
+	transition: width 0.3s;
+}

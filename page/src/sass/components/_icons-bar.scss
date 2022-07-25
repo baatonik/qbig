@@ -1,0 +1,116 @@
+@use '../utilities/' as u;
+
+.icons_bar {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	margin-bottom: 30em;
+
+	&__item {
+		padding: 10em 0;
+		transition: color 0.3s, transform 0.3s;
+
+		i {
+			padding: 0.8em 0;
+			font-size: 2.5rem;
+			text-shadow: 0 0 4px u.$gray;
+		}
+
+		p {
+			line-height: 1em;
+			font-size: 1.2rem;
+		}
+
+		&:hover {
+			color: u.$main-color;
+			transform: scale(1.2);
+		}
+	}
+}
+
+@media (min-width: 576px) {
+	.icons_bar {
+		flex-direction: row;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		padding: 0 50em;
+
+		&__item {
+			width: 40%;
+
+			&:last-child {
+				width: 100%;
+				align-self: center;
+			}
+
+			i {
+				font-size: 2.8rem;
+			}
+
+			p {
+				font-size: 2rem;
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.icons_bar {
+		justify-content: center;
+		margin-bottom: 50em;
+
+		&__item {
+			padding: 1em 2em;
+			width: 30%;
+
+			&:last-child {
+				width: 30%;
+			}
+
+			i {
+				font-size: 3.2rem;
+			}
+
+			p {
+				font-size: 1.6rem;
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.icons_bar {
+		margin-top: 30em;
+		margin-bottom: 50em;
+
+		&__item {
+			width: 20%;
+
+			&:last-child {
+				width: 20%;
+			}
+
+			i {
+				font-size: 3.5rem;
+			}
+
+			p {
+				font-size: 1.5rem;
+			}
+		}
+	}
+}
+
+@media (min-width: 1100px) {
+	.icons_bar {
+		&__item {
+			i {
+				font-size: 4.5rem;
+			}
+
+			p {
+				font-size: 2rem;
+			}
+		}
+	}
+}

@@ -1,0 +1,37 @@
+$pure-white: #fff;
+$black: #000;
+$gray: #333;
+$light-white: #eee;
+$main-color: #eb0000;
+$focus-color: #960101;
+$light-red: #c92525;
+$transparent-black: rgba(0, 0, 0, 0.8);
+
+$gray-gradient: linear-gradient(
+	45deg,
+	rgba(32, 30, 30, 0.75),
+	rgba(83, 73, 73, 0.75)
+);
+$red-gradient-solid: linear-gradient(90deg, rgb(241, 66, 20), rgb(184, 10, 42));
+$light-gradient-solid: linear-gradient(
+	160deg,
+	rgb(255, 255, 255),
+	rgb(125, 125, 125)
+);
+$red-light-gradient: linear-gradient(
+	180deg,
+	rgba(201, 37, 37, 1) 0%,
+	rgba(238, 238, 238, 1) 100%
+);
+$light-red-gradient: linear-gradient(
+	180deg,
+	rgba(238, 238, 238, 1) 0%,
+	rgba(201, 37, 37, 1) 100%
+);
+
+$slide1-color: #e9ebdd;
+$slide2-color: #e1e1e1;
+$slide3-color: #4c3638;
+$slide4-color: #010103;
+$slide5-color: #d1d1d3;
+$slide6-color: #000103;
