@@ -1,7 +1,7 @@
-@use 'utilities' as u;
+@use '../utilities/colors' as c;
 
 @mixin heroImages($bgImg) {
-	background-image: u.$gray-gradient, url($bgImg);
+	background-image: c.$gray-gradient, url($bgImg);
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
@@ -12,6 +12,6 @@
 	right: 0;
 	height: 3px;
 	content: '';
-	background-color: u.$pure-white;
+	background-color: c.$pure-white;
 	transition: width 0.3s;
 }

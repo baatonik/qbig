@@ -1,20 +1,23 @@
-@use '../utilities/' as u;
+@use '../utilities/font-sizes' as fs;
+@use '../utilities/colors' as c;
+@use '../utilities/sizes' as s;
+
 
 .box-img-text {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: flex-start;
-	margin: 5em 0;
-	padding: 0 7em;
+	padding: s.$m1 s.$m1;
 
 	&__img {
 		width: 100%;
 		img {
 			width: 100%;
-			border-radius: 8px;
+			margin-bottom: s.$m1;
+			border-radius: s.$brstandard;
 			transition: transform 0.5s;
-			box-shadow: 3px 3px 10px u.$black;
+			box-shadow: c.$box-shadow;
 
 			&:hover {
 				transform: scale(0.95);
@@ -23,12 +26,11 @@
 	}
 
 	p {
-		margin: 1em 0;
-		font-size: 1.4rem;
-		line-height: 1.3em;
+		font-size: fs.$smedium;
+		margin-bottom: s.$m1;
 
 		strong {
-			font-size: 1.4rem;
+			font-size: fs.$smedium;
 			font-weight: bold;
 		}
 	}
@@ -36,25 +38,11 @@
 
 @media (min-width: 576px) {
 	.box-img-text {
-		padding: 0 10em;
 
 		&__text {
 			p {
-				font-size: 1.6rem;
 				text-align: justify;
-
-				strong {
-					font-size: 1.6rem;
-				}
 			}
-		}
-	}
-}
-
-@media (min-width: 768px) {
-	.box-img-text {
-		&__img {
-			width: 100%;
 		}
 	}
 }
@@ -65,18 +53,17 @@
 
 		&__img {
 			align-self: center;
-			margin-right: 20em;
+			margin-right: s.$m2;
 			width: 50%;
 
 			&--right {
 				margin-right: 0;
-				margin-left: 20em;
+				margin-left: s.$m2;
 				order: 1;
 			}
 		}
 
-		&__text {
-			padding: 0 1em;
+		&__text {		
 			width: 50%;
 		}
 	}

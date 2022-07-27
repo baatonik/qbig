@@ -1,15 +1,14 @@
-@use '../utilities/' as u;
+@use '../utilities/font-sizes' as fs;
+@use '../utilities/colors' as c;
+@use '../utilities/sizes' as s;
 
 .projects-carousel {
-	padding: 5em 5em;
-	margin-bottom: 10em;
+	padding: 1em 1em;
 
 	.card {
 		position: relative;
         height: 300px;
-		margin: 0 10em;
-		border: 1px solid u.$light-white;
-		border-radius: 10px;
+		border-radius: s.$brsmall;
 		transition: transform 0.3s;
 		overflow: hidden;
 
@@ -33,9 +32,9 @@
 
 			p {
 				position: absolute;
-				font-size: 2rem;
+				font-size: fs.$smedium;
 				text-align: center;
-				color: u.$pure-white;
+				color: c.$pure-white;
 				text-transform: uppercase;
 				z-index: 1;
 			}
@@ -45,8 +44,8 @@
 				content: '';
 				width: 100%;
 				height: 100%;
-				background-color: rgba(0, 0, 0, 0.8);
-				border-radius: 10px;
+				background-color: c.$transparent-black;
+				border-radius: s.$brsmall;
 			}
 		}
 
@@ -59,35 +58,38 @@
 .slick-dots {
 	display: flex;
 	justify-content: center;
-	padding: 15em 0;
+	padding: s.$m1 0;
 	list-style-type: none;
 	
 		li {
-			margin: 0 4em;
+			margin: 0 0.2em;
 		}
 	
 		button {
 			display: block;
-			width: 1em;
-			height: 1em;
+			width: s.$m1;
+			height: s.$m1;
 			
 			border: none;
 			border-radius: 100%;
-			background-color: u.$light-white;
+			background-color: c.$light-white;
 			
 			text-indent: -9999px;
             cursor: pointer;
 		}
 	
 		li.slick-active button {
-			background-color: u.$black;
+			background-color: c.$black;
 		}
 	
 }
 
 @media (min-width: 576px) {
 	.projects-carousel {
-		padding: 0 10em;
+
+		.card{
+			margin-right: s.$m1;
+		}
 	}
 }
 

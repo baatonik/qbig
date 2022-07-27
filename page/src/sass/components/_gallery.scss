@@ -1,9 +1,12 @@
+@use '../utilities/font-sizes' as fs;
 @use '../utilities/colors' as c;
+@use '../utilities/sizes' as s;
 @use 'lightbox-mini' as lm;
 
 .gallery {
 	&__container {
 		max-width: 560px;
+		padding: 0 s.$m1;
 	}
 
 	&__accordion-box {
@@ -14,14 +17,14 @@
 		.accordion-btn {
 			display: flex;
 			align-items: center;
-			padding: 0.8em 0.5em;
-			margin: 0.5em 0;
-			width: 90%;
-			font-size: 1.6rem;
+			padding: s.$m1 s.$m1;
+			margin: 0.3em 0;
+			width: 100%;
+			font-size: fs.$smedium;
 			text-align: left;
-			border: 2px solid c.$gray;
+			border: 1px solid c.$gray;
 			color: c.$gray;
-			border-radius: 6px;
+			border-radius: s.$brsmall;
 			cursor: pointer;
 			transition: background-color 0.3s, color 0.3s;
 
@@ -32,8 +35,7 @@
 			}
 
 			i {
-				margin-right: 1em;
-				font-size: 1.6rem;
+				margin-right: s.$m1;
 			}
 		}
 	}
@@ -41,7 +43,7 @@
 	&__box {
 		display: none;
 		grid-column: 250px;
-		gap: 3em;
+		gap: s.$m1;
 
 		&-item {
 			width: 250px;
@@ -56,7 +58,7 @@
 			img {
 				width: 100%;
 				height: 100%;
-				border-radius: 8px;
+				border-radius: s.$brstandard;
 				object-fit: cover;
 			}
 		}
@@ -79,7 +81,6 @@
 			align-items: center;
 			align-content: center;
 			justify-content: center;
-			margin: 0 10em;
 			max-width: none;
 		}
 
@@ -93,7 +94,7 @@
 		&__box {
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
-			gap: 5em;
+			gap: s.$m1;
 		}
 
 		.mobile {
@@ -103,16 +104,15 @@
 		&__menu-tabs {
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
-			gap: 5em;
-			padding: 20em 10em;
+			gap: 0.5em;
+			margin-bottom: s.$m1;
 
 			.menu-tab {
-				padding: 1em 1em;
-				margin: 0.2em 0.2em;
-				font-size: 1.6rem;
+				padding: s.$m1 s.$m1;
+				font-size: fs.$smedium;
 				background-color: c.$main-color;
 				color: c.$light-white;
-				border-radius: 8px;
+				border-radius: s.$brstandard;
 				border: none;
 				cursor: pointer;
 				transition: background-color 0.3s, color 0.3s;
@@ -138,10 +138,9 @@
 	}
 }
 
-@media (min-width: 800px) {
+@media (min-width: 830px) {
 	.gallery__box {
 		grid-template-columns: repeat(3, 1fr);
-		gap: 7em;
 	}
 
 	.gallery__menu-tabs {
@@ -164,6 +163,5 @@
 @media (min-width: 1100px) {
 	.gallery__box {
 		grid-template-columns: repeat(4, 1fr);
-		gap: 10em;
 	}
 }

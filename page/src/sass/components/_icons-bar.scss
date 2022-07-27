@@ -1,28 +1,29 @@
-@use '../utilities/' as u;
+@use '../utilities/font-sizes' as fs;
+@use '../utilities/colors' as c;
+@use '../utilities/sizes' as s;
 
 .icons_bar {
 	display: flex;
 	flex-direction: column;
 	text-align: center;
-	margin-bottom: 30em;
+	margin-bottom: s.$m2;
 
 	&__item {
-		padding: 10em 0;
+		padding: 0.3em 0;
 		transition: color 0.3s, transform 0.3s;
 
 		i {
-			padding: 0.8em 0;
-			font-size: 2.5rem;
-			text-shadow: 0 0 4px u.$gray;
+			padding: s.$m1 0;
+			font-size: fs.$slarge;
+			text-shadow: 0 0 4px c.$gray;
 		}
 
 		p {
-			line-height: 1em;
-			font-size: 1.2rem;
+			font-size: fs.$smedium;
 		}
 
 		&:hover {
-			color: u.$main-color;
+			color: c.$main-color;
 			transform: scale(1.2);
 		}
 	}
@@ -33,10 +34,10 @@
 		flex-direction: row;
 		justify-content: space-between;
 		flex-wrap: wrap;
-		padding: 0 50em;
+		padding: 0 s.$m1;
 
 		&__item {
-			width: 40%;
+			width: 50%;
 
 			&:last-child {
 				width: 100%;
@@ -44,11 +45,11 @@
 			}
 
 			i {
-				font-size: 2.8rem;
+				font-size: fs.$lmedium;
 			}
 
 			p {
-				font-size: 2rem;
+				font-size: fs.$medium;
 			}
 		}
 	}
@@ -57,10 +58,10 @@
 @media (min-width: 768px) {
 	.icons_bar {
 		justify-content: center;
-		margin-bottom: 50em;
+		margin-bottom: s.$m1;
 
 		&__item {
-			padding: 1em 2em;
+			padding: s.$m1 s.$m2;
 			width: 30%;
 
 			&:last-child {
@@ -68,11 +69,11 @@
 			}
 
 			i {
-				font-size: 3.2rem;
+				font-size: fs.$slarge;
 			}
 
 			p {
-				font-size: 1.6rem;
+				font-size: fs.$smedium;
 			}
 		}
 	}
@@ -80,36 +81,11 @@
 
 @media (min-width: 992px) {
 	.icons_bar {
-		margin-top: 30em;
-		margin-bottom: 50em;
-
 		&__item {
 			width: 20%;
 
 			&:last-child {
 				width: 20%;
-			}
-
-			i {
-				font-size: 3.5rem;
-			}
-
-			p {
-				font-size: 1.5rem;
-			}
-		}
-	}
-}
-
-@media (min-width: 1100px) {
-	.icons_bar {
-		&__item {
-			i {
-				font-size: 4.5rem;
-			}
-
-			p {
-				font-size: 2rem;
 			}
 		}
 	}

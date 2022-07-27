@@ -1,45 +1,42 @@
-@use 'utilities' as u;
-@use 'mixins' as c;
+@use '../utilities/font-sizes' as fs;
+@use 'mixins' as mix;
+@use '../utilities/colors' as c;
+@use '../utilities/sizes' as s;
 
 .header {
 	position: relative;
-	padding-top: 10em;
+	padding-top: 3em;
 	height: 100vh;
-	color: u.$light-white;
-	@include c.heroImages('../img/header-small.jpg');
+	color: c.$light-white;
+	@include mix.heroImages('../img/header-small.jpg');
 
 	&__heading {
-		margin-bottom: 0.5em;
-		font-size: 10rem;
+		margin-bottom: 0.3em;
+		font-size: fs.$large;
 		font-weight: bold;
-		text-shadow: 1px 1px 1px #1f1f1f, 1px 2px 1px #1f1f1f, 1px 3px 1px #1f1f1f,
-			1px 4px 1px #1f1f1f, 1px 5px 1px #1f1f1f, 1px 6px 1px #1f1f1f,
-			1px 7px 1px #1f1f1f, 1px 8px 1px #1f1f1f, 1px 9px 1px #1f1f1f,
-			1px 10px 1px #1f1f1f, 1px 18px 6px rgba(16, 16, 16, 0.4),
-			1px 22px 10px rgba(16, 16, 16, 0.2), 1px 25px 35px rgba(16, 16, 16, 0.2),
-			1px 30px 60px rgba(16, 16, 16, 0.4);
+		text-shadow: c.$heading-shadow;
 
 		&-span {
-			font-size: 12rem;
+			font-size: fs.$xlarge;
 			text-transform: uppercase;
-			color: u.$main-color;
+			color: c.$main-color;
 		}
 	}
 
 	&__text {
-		font-size: 2rem;
-		margin-bottom: 2em;
-		color: u.$light-white;
+		font-size: fs.$medium;
+		margin-bottom: 3em;
+		color: c.$light-white;
 	}
 
 	&__btn {
 		padding: 0.8em 1.6em;
-		font-size: 2rem;
+		font-size: fs.$medium;
 		font-weight: bold;
-		background-color: u.$main-color;
-		color: u.$light-white;
+		background-color: c.$main-color;
+		color: c.$light-white;
 		border: none;
-		border-radius: 8px;
+		border-radius: s.$brstandard;
 		text-decoration: none;
 		text-transform: uppercase;
 		transition: background-color 0.3s, color 0.35s;
@@ -48,98 +45,84 @@
 		cursor: pointer;
 
 		&:hover {
-			background-color: u.$light-white;
-			color: u.$main-color;
+			background-color: c.$light-white;
+			color: c.$main-color;
 		}
 
 		&:focus {
-			background-color: u.$focus-color;
+			background-color: c.$focus-color;
 		}
 	}
 
 	.fa-chevron-down {
 		position: absolute;
-		padding: 1em 0;
+		padding: s.$m1 0;
 		left: 50%;
 		transform: translate(-50%);
 		bottom: 5%;
-		font-size: 3rem;
-		color: u.$light-white;
+		font-size: fs.$medium;
+		color: c.$light-white;
 	}
 
 	.fa-chevron-down:hover {
-		color: u.$main-color;
+		color: c.$main-color;
 	}
 }
 
 @media (min-width: 576px) {
 	.header {
 		&__heading {
-			font-size: 14rem;
+			font-size: fs.$xlarge;
 
 			&-span {
-				font-size: 17rem;
+				font-size: fs.$xxlarge;
 			}
 		}
 
 		&__text {
-			font-size: 3rem;
+			font-size: fs.$lmedium;
 		}
 
 		&__btn {
-			padding: .5em 1.5em;
-			font-size: 3.2rem;
+			font-size: fs.$lmedium;
 		}
 	}
-
 }
 
 @media (min-width: 768px) {
-
 	.header {
 		&__heading {
 			margin-top: 0.5em;
-			font-size: 16rem;
+			font-size: fs.$xlarge;
 
 			&-span {
-				font-size: 19rem;
+				font-size: fs.$xxlarge;
 			}
-		}
-
-		&__text {
-			font-size: 3.5rem;
-		}
-
-		&__btn {
-			padding: .5em 1.5em;
-			font-size: 3.8rem;
 		}
 	}
 }
 
 @media (min-width: 992px) {
-
 	.header {
-		@include c.heroImages('../img/header-big.jpg');
-		
+		@include mix.heroImages('../img/header-big.jpg');
+
 		&__heading {
 			margin-bottom: 0.2em;
-			font-size: 20rem;
+			font-size: fs.$xxlarge;
 
 			&-span {
-				font-size: 25rem;
+				font-size: fs.$largest;
 			}
 		}
 
 		&__text {
-			margin-bottom: 1.5em;
-			font-size: 3.5rem;
+			margin-bottom: 1.8em;
+			font-size: fs.$lmedium;
 		}
 
 		&__btn {
-			padding: .5em 1.5em;
-			font-size: 2.8rem;
+			padding: 0.5em 1.5em;
+			font-size: fs.$lmedium;
 		}
-	
 	}
 }

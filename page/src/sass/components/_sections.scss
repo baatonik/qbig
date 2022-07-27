@@ -1,91 +1,69 @@
-@use '../utilities/' as u;
+@use '../utilities/colors' as c;
+@use '../utilities/font-sizes' as fs;
+@use '../utilities/sizes' as s;
 
 .section {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 0 0 10em;
+	padding-bottom: s.$m1;
 }
 
 .light-section {
-	background-color: u.$light-white;
-	color: u.$black;
+	background-color: c.$light-white;
+	color: c.$black;
 }
 
 .red-section {
-	background-image: u.$red-gradient-solid;
-	color: u.$light-white;
+	background-image: c.$red-gradient-solid;
+	color: c.$light-white;
 }
 
 .section-heading {
-	padding: 1.8em 0 0.5em;
-	font-size: 4rem;
+	margin-top: s.$m1;
+	font-size: fs.$slarge;
 	font-weight: bold;
 	text-align: center;
 	text-transform: uppercase;
 }
 
 .light-section .section-heading {
-	color: u.$black;
+	color: c.$black;
 }
 
 .red-section .section-heading {
-	color: u.$light-white;
+	color: c.$light-white;
 }
 
 .underline {
-	margin: 0 auto 20em;
-	width: 60px;
+	margin: 0 auto s.$m2;
+	width: 80px;
 	height: 4px;
-	background-color: u.$main-color;
+	background-color: c.$main-color;
 }
 
 .light-section .underline {
-	background-color: u.$main-color;
+	background-color: c.$main-color;
 }
 
 .red-section .underline {
-	background-color: u.$pure-white;
+	background-color: c.$pure-white;
 }
 
-.light-red-gradient {
-	padding: 0;
-	margin: 0;
-	bottom: 0;
-	width: 100%;
-	height: 3em;
-	background-image: u.$light-red-gradient;
-}
+// .light-red-gradient {
+// 	padding: 0;
+// 	margin: 0;
+// 	bottom: 0;
+// 	width: 100%;
+// 	height: 3em;
+// 	background-image: c.$light-red-gradient;
+// }
 
-.red-light-gradient {
-	padding: 0;
-	margin: 0;
-	top: 0;
-	width: 100%;
-	height: 3em;
-	background-image: u.$red-light-gradient;
-}
-
-@media (min-width: 576px) {
-	.section-heading {
-		font-size: 6rem;
-	}
-
-	.underline {
-		width: 80px;
-		height: 7px;
-	}
-}
-
-@media (min-width: 768px) {
-	.section-heading {
-		font-size: 5rem;
-	}
-}
-
-@media (min-width: 992px) {
-	.section-heading {
-		padding-bottom: 0.2em;
-		font-size: 6rem;
-	}
-}
+// .red-light-gradient {
+// 	padding: 0;
+// 	margin: 0;
+// 	top: 0;
+// 	width: 100%;
+// 	height: 3em;
+// 	background-image: c.$red-light-gradient;
+// }

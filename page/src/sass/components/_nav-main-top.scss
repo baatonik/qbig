@@ -1,4 +1,6 @@
-@use 'utilities' as u;
+@use '../utilities/font-sizes' as fs;
+@use '../utilities/colors' as c;
+@use '../utilities/sizes' as s;
 @use 'animations' as a;
 
 .nav {
@@ -11,7 +13,7 @@
 	width: 100%;
 	transform: translateX(100%);
 	transition: transform 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
-	background-image: u.$red-gradient-solid;
+	background-image: c.$red-gradient-solid;
 	z-index: 100;
 
 	&--active {
@@ -21,10 +23,9 @@
 	&__items-item {
 		position: relative;
 		display: block;
-		margin: 0.5em 0;
-		padding: 0.5em 2em;
-		font-size: 2.8rem;
-		color: u.$pure-white;
+		padding: 0.3em 0.3em;
+		font-size: fs.$lmedium;
+		color: c.$pure-white;
 		text-decoration: none;
 
 		&::before {
@@ -34,7 +35,7 @@
 			width: 3px;
 			height: 100%;
 			transform: scaleY(0);
-			background-color: u.$light-white;
+			background-color: c.$light-white;
 			transition: transform 0.3s;
 			content: '';
 		}
@@ -45,14 +46,9 @@
 	}
 }
 
-.nav-items-animation {
-	animation: navItemsAnimation 1s both;
-}
-
 @media (min-width: 768px) {
-
 	.nav {
-		height: 25em;
+		height: fs.$mlarge;
 		transform: translateX(0);
 		overflow: hidden;
 		box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
@@ -64,34 +60,23 @@
 
 			&-item {
 				display: flex;
-				line-height: 4em;
-				font-size: 1.5rem;
+				padding: 0 s.$m1;
+				line-height: fs.$mlarge;
+				font-size: fs.$medium;
 				outline: none;
 				transition: background-color 0.3s;
 
 				&:hover {
-					background-color: u.$focus-color;
+					background-color: c.$focus-color;
 				}
 
 				&:focus {
-					background-color: u.$focus-color;
+					background-color: c.$focus-color;
 				}
 
 				&:hover::before {
 					transform: scaleY(0);
 				}
-			}
-		}
-	}
-}
-
-@media (min-width: 992px) {
-	.nav {
-		height: 28em;
-
-		&__items {
-			&-item {
-				font-size: 1.8rem;
 			}
 		}
 	}

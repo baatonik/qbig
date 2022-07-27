@@ -56,7 +56,6 @@ const closeLightbox = () => {
 		burgerBtn.style.display = 'block';
 	}
 
-	console.log(window.innerWidth);
 	imgsGalleryNameMap.clear();
 	body.style.overflow = 'visible';
 	lightbox.style.display = 'none';

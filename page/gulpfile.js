@@ -87,13 +87,6 @@ function convertImages(done) {
 	done();
 }
 
-// function convertImagesExpandSlider(done) {
-// 	src(paths.imgExpandSlider)
-// 		.pipe(imagemin())
-// 		.pipe(dest(paths.imgExpandSliderDest));
-// 	done();
-// }
-
 function handleKits(done) {
 	src(paths.html).pipe(kit()).pipe(dest('./'));
 	done();
