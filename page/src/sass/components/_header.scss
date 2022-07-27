@@ -8,8 +8,7 @@
 	padding-top: 3em;
 	height: 100vh;
 	color: c.$light-white;
-	background-image: c.$gray-gradient, url('../img/header-small.jpg');
-	// @include mix.heroImages('../img/header-small.jpg');
+	@include mix.heroImages('../img/header-small.jpg');
 
 	&__heading {
 		margin-bottom: 0.3em;
@@ -105,8 +104,7 @@
 
 @media (min-width: 992px) {
 	.header {
-		// @include mix.heroImages('../img/header-big.jpg');
-		background-image: c.$gray-gradient, url('../img/header-big.jpg');
+		@include mix.heroImages('../img/header-big.jpg');
 
 		&__heading {
 			margin-bottom: 0.2em;
