@@ -29,6 +29,7 @@
 		width: 100%;
 		max-height: 90vh;
 		object-fit: contain;
+		cursor: zoom-in;
 	}
 
 	&__close-btn {
@@ -55,7 +56,7 @@
 		position: absolute;
 		top: 50%;
 		width: auto;
-		padding: 8em s.$m1;
+		padding: s.$m1 s.$m1;
 		font-size: fs.$medium;
 		font-weight: bold;
 		color: c.$light-white;
@@ -71,11 +72,16 @@
 	}
 
 	&__previous-btn{
-		padding-right: 8em;
+		padding-right: s.$m1;
 	}
 
     &__next-btn {
         right: 0;
-		padding-left: 8em;
+		padding-left: s.$m1;
     }
+}
+
+.zoom-img {
+	cursor: zoom-in;
+	transform: scale(2);
 }

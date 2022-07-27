@@ -50,9 +50,9 @@ const showLightbox = () => {
 };
 
 const closeLightbox = () => {
-	if(window.innerWidth >= 768){
+	if (window.innerWidth >= 768) {
 		navTopMenu.style.display = 'flex';
-	}else{
+	} else {
 		burgerBtn.style.display = 'block';
 	}
 
@@ -75,6 +75,26 @@ const changeSlide = (n) => {
 	imgSlide.setAttribute('src', imgsGalleryNameMap.get(index));
 };
 
+const zoomImg = (e) => {
+	const x = e.clientX;
+	const y = e.clientY;
+
+	const imgX = imgSlide.offsetLeft;
+	const imgY = imgSlide.offsetTop;
+
+	const newX = (imgX - x) * -1;
+	const newY = (imgY - y) * -1;
+
+	imgSlide.style.transformOrigin = `${newX}px ${newY}px`;
+
+	imgSlide.classList.add('zoom-img');
+};
+
+const resetImg = () => {
+	imgSlide.classList.remove('zoom-img');
+	imgSlide.removeEventListener('mousemove', zoomImg);
+};
+
 allGalleryImages.forEach((img) => {
 	img.addEventListener('click', selectImg);
 });
@@ -85,3 +105,8 @@ prevBtn.addEventListener('click', () => {
 nextBtn.addEventListener('click', () => {
 	changeSlide(1);
 });
+imgSlide.addEventListener('click', () => {
+	imgSlide.addEventListener('mousemove', zoomImg);
+})
+// imgSlide.addEventListener('mousemove', zoomImg);
+imgSlide.addEventListener('mouseout', resetImg);

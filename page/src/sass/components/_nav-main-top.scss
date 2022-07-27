@@ -53,6 +53,13 @@
 		overflow: hidden;
 		box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
 
+		.active-link {
+			position: relative;
+			font-weight: bold;
+			text-decoration-line: underline;
+			text-underline-offset: 3px;
+		}
+
 		&__items {
 			width: 100%;
 			display: flex;

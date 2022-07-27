@@ -105,6 +105,7 @@
 @media (min-width: 992px) {
 	.header {
 		@include mix.heroImages('../img/headerbig.jpg');
+		background-attachment: fixed;
 
 		&__heading {
 			margin-bottom: 0.2em;
