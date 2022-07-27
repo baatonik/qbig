@@ -1,4 +1,4 @@
-@use '../utilities/colors' as c;
+@use 'utilities/colors' as c;
 
 @mixin heroImages($bgImg) {
 	background-image: c.$gray-gradient, url($bgImg);

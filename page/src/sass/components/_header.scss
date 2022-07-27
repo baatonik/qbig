@@ -1,7 +1,7 @@
-@use '../utilities/font-sizes' as fs;
+@use 'utilities/font-sizes' as fs;
 @use 'mixins' as mix;
-@use '../utilities/colors' as c;
-@use '../utilities/sizes' as s;
+@use 'utilities/colors' as c;
+@use 'utilities/sizes' as s;
 
 .header {
 	position: relative;

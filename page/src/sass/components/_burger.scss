@@ -1,5 +1,5 @@
-@use '../utilities/colors' as c;
-@use '../utilities/sizes' as s;
+@use 'utilities/colors' as c;
+@use 'utilities/sizes' as s;
 @use 'mixins' as mix;
 
 .burger-btn {

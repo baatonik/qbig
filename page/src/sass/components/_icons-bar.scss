@@ -1,6 +1,6 @@
-@use '../utilities/font-sizes' as fs;
-@use '../utilities/colors' as c;
-@use '../utilities/sizes' as s;
+@use 'utilities/font-sizes' as fs;
+@use 'utilities/colors' as c;
+@use 'utilities/sizes' as s;
 
 .icons_bar {
 	display: flex;
