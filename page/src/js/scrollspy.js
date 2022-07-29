@@ -6,9 +6,6 @@ const handleCrollSpy = (params) => {
 	if (document.body.classList.contains('main-page')) {
 		const sections = [];
 		scrollSpySections.forEach((section) => {
-			// console.log(window.scrollY); //wartość srollY
-			// console.log(section.offsetTop); //odleglosc danej sekcji od gonej krawedzi przegladarki
-			// console.log(section.offsetHeight); //wysokosc kazdej z sekcji
 
 			if (window.scrollY <= section.offsetTop + section.offsetHeight - 103) {
 				sections.push(section);

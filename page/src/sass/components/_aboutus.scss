@@ -1,0 +1,92 @@
+@use 'utilities/font-sizes' as fs;
+@use 'mixins' as mix;
+@use 'utilities/colors' as c;
+@use 'utilities/sizes' as s;
+
+.aboutus {
+	position: relative;
+	padding: s.$m1;
+	color: c.$light-white;
+	@include mix.heroImages('../img/aboutuss-small.jpg');
+
+	.underline {
+		background-color: c.$light-white;
+	}
+
+	&__info {
+		padding: s.$m1;
+		font-size: fs.$smedium;
+		margin-bottom: s.$m1;
+
+		&-description {
+			text-align: justify;
+			margin-bottom: s.$m1;
+		}
+
+		&-list {
+			text-align: center;
+			list-style: none;
+
+			&-item {
+				text-transform: uppercase;
+				padding: 0.2em 0;
+			}
+		}
+	}
+
+	&__contact-btn {
+		padding: 0.5em s.$m1;
+		font-size: fs.$smedium;
+		font-weight: bold;
+		margin-bottom: 3em;
+		background-color: c.$main-color;
+		color: c.$light-white;
+		border: none;
+		border-radius: s.$brstandard;
+		text-decoration: none;
+		text-transform: uppercase;
+		transition: background-color 0.3s, color 0.35s;
+		outline: none;
+		box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7);
+		cursor: pointer;
+
+		&:hover {
+			background-color: c.$light-white;
+			color: c.$main-color;
+		}
+
+		&:focus {
+			background-color: c.$focus-color;
+		}
+	}
+}
+
+@media (min-width: 576px) {
+	.aboutus {
+		padding-left: 3em;
+		padding-right: 3em;
+		&__info {
+			margin-bottom: 4em;
+
+			&-description {
+				margin-bottom: 4em;
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.aboutus {
+		padding-left: 5em;
+		padding-right: 5em;
+		background-attachment: fixed;
+	}
+}
+
+@media (min-width: 992px) {
+	.aboutus {
+        padding-left: 7em;
+		padding-right: 7em;
+		@include mix.heroImages('../img/aboutuss-big.jpg');
+	}
+}

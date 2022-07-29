@@ -1,0 +1,122 @@
+@use 'utilities/font-sizes' as fs;
+@use 'utilities/colors' as c;
+@use 'utilities/sizes' as s;
+
+.contact {
+	&__container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 0 s.$m1;
+		font-size: fs.$smedium;
+	}
+
+	&__form {
+		margin-bottom: s.$m1;
+
+		&-heading {
+			margin-bottom: s.$m1;
+		}
+
+		&-input {
+			width: 100%;
+			padding: 0.5em 0.5em;
+			margin: 0.5em 0;
+			font-size: fs.$smedium;
+
+			&--message {
+				width: 100%;
+				padding: 0.5em 0.5em;
+				resize: vertical;
+			}
+		}
+
+		&-rodo {
+			margin-bottom: s.$m1;
+		}
+
+		&-send-btn {
+			padding: s.$m1;
+			margin-bottom: s.$m1;
+			font-weight: bold;
+			border: 1px solid c.$black;
+			border-radius: s.$brstandard;
+			text-transform: uppercase;
+			transition: background-color 0.3s, color 0.35s;
+			outline: none;
+			box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+			cursor: pointer;
+
+			&:hover {
+				background-color: c.$main-color;
+				color: c.$pure-white;
+			}
+
+			&:focus {
+				background-color: c.$focus-color;
+				color: c.$pure-white;
+			}
+		}
+	}
+
+	&__map {
+		width: 100%;
+		padding: 1em;
+		background-image: c.$red-gradient-solid;
+		color: c.$light-white;
+		border: 1px solid c.$main-color;
+		border-radius: s.$brstandard;
+
+		&-heading {
+			margin-bottom: s.$m1;
+		}
+
+		&-map {
+			margin-bottom: s.$m1;
+		}
+
+		&-info {
+			p {
+				padding: 0.5em 0;
+
+				i {
+					margin-right: 0.5em;
+				}
+			}
+		}
+
+		.gmap_canvas {
+			position: relative;
+			padding-bottom: 75%; // This is the aspect ratio
+			height: 0;
+			overflow: hidden;
+
+			iframe {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100% !important;
+				height: 100% !important;
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.contact {
+		&__container {
+			flex-direction: row;
+			align-items: flex-start;
+		}
+
+		&__form{
+			margin-right: s.$m2;
+			width: 50%;
+		}
+
+		&__map {
+			width: 50%;
+		}
+	}
+}

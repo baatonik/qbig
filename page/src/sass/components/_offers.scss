@@ -1,0 +1,122 @@
+@use 'utilities/font-sizes' as fs;
+@use 'utilities/colors' as c;
+@use 'utilities/sizes' as s;
+
+.offers {
+	&__cards {
+		padding: s.$m1;
+	}
+
+	&__card {
+		position: relative;
+		margin: s.$m1 0;
+		height: 400px;
+        color: c.$pure-white;
+        text-align: center;
+        perspective: 1000px;
+
+		&:hover {
+			.offers__card-img {
+				transform: rotateY(-180deg);
+				opacity: 0;
+			}
+
+			.offers__card-info {
+				transform: rotateY(0);
+				opacity: 1;
+			}
+		}
+
+		&-img {
+            padding: s.$m2;
+			height: 100%;
+			border-radius: s.$brstandard;
+			background-size: cover;
+            background-position: center;
+			transition: transform 1s, opacity 1s;
+
+			&--first {
+				background-image: c.$red-light-gradient, url('../img/truck.jpg');
+			}
+
+			&--second {
+				background-image: c.$red-light-gradient, url('../img/certificate.jpg');
+			}
+
+			&--third {
+				background-image: c.$red-light-gradient, url('../img/british.jpg');
+			}
+
+			&-title {
+				font-size: fs.$medium;
+			}
+
+            &-info {
+				position: absolute;
+				bottom: 30px;
+				right: 30px;
+				font-size: fs.$smedium;
+
+				i {
+					margin-right: 0.3em;
+				}
+			}
+		}
+
+		&-info {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+            padding: s.$m1;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+            align-items: center;
+			background-image: c.$red-gradient-solid;
+			border-radius: s.$brstandard;
+			opacity: 0;
+			transform: rotateY(180deg);
+			transition: transform 1s, opacity 1s;
+
+			&-title {
+                width: 100%;
+                
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
+				top: 1.2em;
+				font-size: fs.$medium;
+			}
+
+            &-p {
+                text-align: left;
+				// margin: 0 auto;
+				width: 90%;
+			}
+		}
+	}
+}
+
+@media (min-width: 576px) {
+    .offers {
+		&__cards {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+		&__card {
+			margin: 0.5em;
+			width: 45%;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+    .offers {
+		&__card {
+			width: 30%;
+		}
+	}
+}

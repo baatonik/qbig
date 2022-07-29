@@ -5,6 +5,8 @@
 .footer {
 	padding: 0;
 	overflow: hidden;
+	background-image: c.$red-gradient-solid;
+	color: c.$light-white;
 
 	&__nav {
 		display: none;
@@ -47,7 +49,6 @@
 	}
 
 	&__box {
-
 		&-title {
 			margin-bottom: 0.5em;
 			font-size: fs.$slarge;
@@ -103,7 +104,7 @@
 			align-items: flex-start;
 		}
 
-		&__box{
+		&__box {
 			width: 85%;
 			padding: 0;
 		}

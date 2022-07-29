@@ -12,11 +12,13 @@
 .light-section {
 	background-color: c.$light-white;
 	color: c.$black;
+	background-image: c.$background-svg;
 }
 
 .red-section {
-	background-image: c.$red-gradient-solid;
+	background-color: c.$light-red;
 	color: c.$light-white;
+	background-image: c.$background-svg;
 }
 
 .section-heading {
@@ -49,21 +51,3 @@
 .red-section .underline {
 	background-color: c.$pure-white;
 }
-
-// .light-red-gradient {
-// 	padding: 0;
-// 	margin: 0;
-// 	bottom: 0;
-// 	width: 100%;
-// 	height: 3em;
-// 	background-image: c.$light-red-gradient;
-// }
-
-// .red-light-gradient {
-// 	padding: 0;
-// 	margin: 0;
-// 	top: 0;
-// 	width: 100%;
-// 	height: 3em;
-// 	background-image: c.$red-light-gradient;
-// }
