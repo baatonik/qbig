@@ -3,10 +3,11 @@
 @use 'utilities/sizes' as s;
 
 .section {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding-bottom: s.$m1;
+	overflow: hidden;
 }
 
 .light-section {
@@ -22,7 +23,7 @@
 }
 
 .section-heading {
-	margin-top: s.$m1;
+	margin-top: s.$m2;
 	font-size: fs.$slarge;
 	font-weight: bold;
 	text-align: center;
@@ -38,7 +39,7 @@
 }
 
 .underline {
-	margin: 0 auto s.$m2;
+	margin: 0 auto 4em;
 	width: 80px;
 	height: 4px;
 	background-color: c.$main-color;
@@ -50,4 +51,24 @@
 
 .red-section .underline {
 	background-color: c.$pure-white;
+}
+
+.white-block {
+	position: absolute;
+	height: 40px;
+	width: 50%;
+	background-color: c.$light-white;
+	background-image: c.$background-svg;
+
+	&-left {
+		bottom: 0;
+		left: -50px;
+		transform: skew(45deg);
+	}
+
+	&-right {
+		top: 0;
+		right: -50px;
+		transform: skew(45deg);
+	}
 }

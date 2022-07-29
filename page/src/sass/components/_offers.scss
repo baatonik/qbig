@@ -3,6 +3,8 @@
 @use 'utilities/sizes' as s;
 
 .offers {
+	padding-bottom: 4em;
+
 	&__cards {
 		padding: s.$m1;
 	}
@@ -11,9 +13,9 @@
 		position: relative;
 		margin: s.$m1 0;
 		height: 400px;
-        color: c.$pure-white;
-        text-align: center;
-        perspective: 1000px;
+		color: c.$pure-white;
+		text-align: center;
+		perspective: 1000px;
 
 		&:hover {
 			.offers__card-img {
@@ -28,11 +30,11 @@
 		}
 
 		&-img {
-            padding: s.$m2;
+			padding: s.$m2;
 			height: 100%;
 			border-radius: s.$brstandard;
 			background-size: cover;
-            background-position: center;
+			background-position: center;
 			transition: transform 1s, opacity 1s;
 
 			&--first {
@@ -51,7 +53,7 @@
 				font-size: fs.$medium;
 			}
 
-            &-info {
+			&-info {
 				position: absolute;
 				bottom: 30px;
 				right: 30px;
@@ -69,11 +71,11 @@
 			bottom: 0;
 			left: 0;
 			right: 0;
-            padding: s.$m1;
+			padding: s.$m1;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
-            align-items: center;
+			align-items: center;
 			background-image: c.$red-gradient-solid;
 			border-radius: s.$brstandard;
 			opacity: 0;
@@ -81,8 +83,8 @@
 			transition: transform 1s, opacity 1s;
 
 			&-title {
-                width: 100%;
-                
+				width: 100%;
+
 				position: absolute;
 				left: 50%;
 				transform: translateX(-50%);
@@ -90,8 +92,8 @@
 				font-size: fs.$medium;
 			}
 
-            &-p {
-                text-align: left;
+			&-p {
+				text-align: left;
 				// margin: 0 auto;
 				width: 90%;
 			}
@@ -100,7 +102,7 @@
 }
 
 @media (min-width: 576px) {
-    .offers {
+	.offers {
 		&__cards {
 			display: flex;
 			justify-content: center;
@@ -114,7 +116,7 @@
 }
 
 @media (min-width: 768px) {
-    .offers {
+	.offers {
 		&__card {
 			width: 30%;
 		}

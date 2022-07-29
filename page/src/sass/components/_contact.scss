@@ -3,6 +3,8 @@
 @use 'utilities/sizes' as s;
 
 .contact {
+	padding-bottom: 6em;
+
 	&__container {
 		display: flex;
 		flex-direction: column;

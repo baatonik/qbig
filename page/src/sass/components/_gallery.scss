@@ -4,6 +4,8 @@
 @use 'lightbox-mini' as lm;
 
 .gallery {
+	padding-bottom: 4em;
+	
 	&__container {
 		max-width: 560px;
 		padding: 0 s.$m1;
