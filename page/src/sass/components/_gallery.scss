@@ -3,12 +3,11 @@
 @use 'utilities/sizes' as s;
 @use 'lightbox-mini' as lm;
 
+.gallery.section{
+	padding-bottom: 8em;
+}
+
 .gallery {
-	// padding-bottom: 4em;
-	
-	&__container {
-		max-width: 560px;
-	}
 
 	&__accordion-box {
 		display: flex;
@@ -42,7 +41,7 @@
 	}
 
 	&__box {
-		margin-top: s.$m1;
+		margin: s.$m1 auto 0;
 		display: none;
 		grid-column: 250px;
 		gap: s.$m1;
@@ -77,14 +76,6 @@
 
 @media (min-width: 576px) {
 	.gallery {
-		&__container {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			align-content: center;
-			justify-content: center;
-			max-width: none;
-		}
 
 		&__accordion-box {
 			display: flex;
@@ -94,49 +85,9 @@
 		}
 
 		&__box {
-			display: grid;
 			grid-template-columns: repeat(2, 1fr);
 			gap: s.$m1;
 		}
-
-		.mobile {
-			display: none;
-		}
-
-		&__menu-tabs {
-			display: grid;
-			grid-template-columns: repeat(2, 1fr);
-			gap: 0.5em;
-			margin-bottom: s.$m2;
-			.menu-tab {
-				padding: s.$m1 s.$m1;
-				font-size: fs.$smedium;
-				background-color: c.$main-color;
-				color: c.$light-white;
-				border-radius: s.$brstandard;
-				border: none;
-				cursor: pointer;
-				box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
-				transition: background-color 0.3s, color 0.3s;
-
-				&:hover {
-					background-color: c.$light-white;
-					color: c.$main-color;
-				}
-			}
-
-			.menu-tab-active {
-				background-color: c.$focus-color;
-				color: c.$light-white;
-			}
-		}
-	}
-
-	.second-tab,
-	.third-tab,
-	.fourth-tab,
-	.fifth-tab {
-		display: none;
 	}
 }
 
@@ -145,21 +96,6 @@
 		grid-template-columns: repeat(3, 1fr);
 	}
 
-	.gallery__menu-tabs {
-		grid-template-columns: repeat(3, 1fr);
-
-		.menu-tab {
-			height: 70px;
-		}
-	}
-}
-
-@media (min-width: 992px) {
-	.gallery__menu-tabs {
-		.menu-tab {
-			height: 50px;
-		}
-	}
 }
 
 @media (min-width: 1100px) {
