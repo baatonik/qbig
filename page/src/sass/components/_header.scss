@@ -5,7 +5,7 @@
 
 .header {
 	position: relative;
-	padding-top: 3em;
+	padding-top: 2em;
 	height: 100vh;
 	color: c.$light-white;
 	@include mix.heroImages('../img/headersmall.jpg');
@@ -59,7 +59,7 @@
 		padding: s.$m1 0;
 		left: 50%;
 		transform: translate(-50%);
-		bottom: 5%;
+		bottom: 10%;
 		font-size: fs.$medium;
 		color: c.$light-white;
 	}
@@ -106,6 +106,7 @@
 	.header {
 		@include mix.heroImages('../img/headerbig.jpg');
 		background-attachment: fixed;
+		padding-top: 0.5em;
 
 		&__heading {
 			margin-bottom: 0.2em;
@@ -117,13 +118,17 @@
 		}
 
 		&__text {
-			margin-bottom: 1.8em;
+			margin-bottom: 3em;
 			font-size: fs.$lmedium;
 		}
 
 		&__btn {
 			padding: 0.5em 1.5em;
 			font-size: fs.$lmedium;
+		}
+
+		.fa-chevron-down {
+			bottom: 5%;
 		}
 	}
 }

@@ -5,7 +5,6 @@
 
 .aboutus {
 	position: relative;
-	padding: s.$m1;
 	color: c.$light-white;
 	@include mix.heroImages('../img/aboutuss-small.jpg');
 
@@ -14,13 +13,13 @@
 	}
 
 	&__info {
-		padding: s.$m1;
+		padding: s.$m1 s.$m1;
 		font-size: fs.$smedium;
 		margin-bottom: s.$m1;
 
 		&-description {
 			text-align: justify;
-			margin-bottom: s.$m1;
+			margin-bottom: s.$m2;
 		}
 
 		&-list {
@@ -36,9 +35,10 @@
 
 	&__contact-btn {
 		padding: 0.5em s.$m1;
+		margin-top: s.$m1;
+		margin-bottom: 3em;
 		font-size: fs.$smedium;
 		font-weight: bold;
-		margin-bottom: 7em;
 		background-color: c.$main-color;
 		color: c.$light-white;
 		border: none;
@@ -63,9 +63,9 @@
 
 @media (min-width: 576px) {
 	.aboutus {
-		padding-left: 3em;
-		padding-right: 3em;
 		&__info {
+			padding-left: 4em;
+			padding-right: 4em;
 			margin-bottom: 4em;
 
 			&-description {
@@ -77,16 +77,27 @@
 
 @media (min-width: 768px) {
 	.aboutus {
-		padding-left: 5em;
-		padding-right: 5em;
 		background-attachment: fixed;
 	}
 }
 
 @media (min-width: 992px) {
 	.aboutus {
-        padding-left: 7em;
-		padding-right: 7em;
 		@include mix.heroImages('../img/aboutuss-big.jpg');
+
+		&__info{
+			padding-left: 7em;
+			padding-right: 7em;
+		}
+	}
+}
+
+@media (min-width: 1100px) {
+	.aboutus {
+
+		&__info{
+			padding-left: 10em;
+			padding-right: 10em;
+		}
 	}
 }

@@ -3,11 +3,12 @@
 @use 'utilities/sizes' as s;
 
 .projects-carousel {
-	padding: 1em 1em;
+	margin: 4em 0;
 
 	.card {
 		position: relative;
         height: 300px;
+		margin: 1em 0.5em;
 		border-radius: s.$brsmall;
 		transition: transform 0.3s;
 		overflow: hidden;
@@ -58,7 +59,7 @@
 .slick-dots {
 	display: flex;
 	justify-content: center;
-	padding: s.$m1 0;
+	padding: 0.5em 0;
 	list-style-type: none;
 	
 		li {
@@ -67,30 +68,20 @@
 	
 		button {
 			display: block;
-			width: s.$m1;
-			height: s.$m1;
-			
+			width: 30px;
+			height: 10px;
 			border: none;
-			border-radius: 100%;
+			border-radius: s.$brstandard;
 			background-color: c.$light-white;
-			
 			text-indent: -9999px;
             cursor: pointer;
+			transition: background-color 0.3s;
 		}
 	
 		li.slick-active button {
-			background-color: c.$black;
+			background-color: c.$gray;
 		}
 	
-}
-
-@media (min-width: 576px) {
-	.projects-carousel {
-
-		.card{
-			margin-right: s.$m1;
-		}
-	}
 }
 
 @media (min-width: 992px) {

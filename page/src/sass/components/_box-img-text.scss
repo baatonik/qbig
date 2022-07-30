@@ -7,16 +7,15 @@
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: flex-start;
-	padding: s.$m1 s.$m1;
+	// padding: s.$m1 s.$m1;
 
 	&__img {
 		width: 100%;
 		img {
 			width: 100%;
-			margin-bottom: s.$m1;
+			margin-bottom: s.$m2;
 			border-radius: s.$brstandard;
 			transition: transform 0.5s;
-			box-shadow: c.$box-shadow;
 
 			&:hover {
 				transform: scale(0.95);

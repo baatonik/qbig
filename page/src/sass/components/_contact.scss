@@ -10,7 +10,6 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		padding: 0 s.$m1;
 		font-size: fs.$smedium;
 	}
 
@@ -26,6 +25,9 @@
 			padding: 0.5em 0.5em;
 			margin: 0.5em 0;
 			font-size: fs.$smedium;
+			border: none;
+			border-radius: s.$brstandard;
+			box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
 
 			&--message {
 				width: 100%;
@@ -35,29 +37,32 @@
 		}
 
 		&-rodo {
-			margin-bottom: s.$m1;
+			margin: s.$m1 0;
 		}
 
 		&-send-btn {
-			padding: s.$m1;
-			margin-bottom: s.$m1;
+			padding: s.$m1 s.$m1;
+			margin: s.$m1 0;
+			font-size: fs.$smedium;
 			font-weight: bold;
-			border: 1px solid c.$black;
+			background-color: c.$main-color;
+			color: c.$light-white;
+			border: none;
 			border-radius: s.$brstandard;
+			text-decoration: none;
 			text-transform: uppercase;
 			transition: background-color 0.3s, color 0.35s;
 			outline: none;
-			box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+			box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
 			cursor: pointer;
 
 			&:hover {
-				background-color: c.$main-color;
-				color: c.$pure-white;
+				background-color: c.$light-white;
+				color: c.$main-color;
 			}
 
 			&:focus {
 				background-color: c.$focus-color;
-				color: c.$pure-white;
 			}
 		}
 	}
@@ -65,10 +70,12 @@
 	&__map {
 		width: 100%;
 		padding: 1em;
+		margin-bottom: s.$m1;
 		background-image: c.$red-gradient-solid;
 		color: c.$light-white;
 		border: 1px solid c.$main-color;
 		border-radius: s.$brstandard;
+		// box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
 
 		&-heading {
 			margin-bottom: s.$m1;
@@ -112,7 +119,7 @@
 			align-items: flex-start;
 		}
 
-		&__form{
+		&__form {
 			margin-right: s.$m2;
 			width: 50%;
 		}

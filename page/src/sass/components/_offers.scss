@@ -3,10 +3,9 @@
 @use 'utilities/sizes' as s;
 
 .offers {
-	padding-bottom: 4em;
 
 	&__cards {
-		padding: s.$m1;
+		margin: 3em 0;
 	}
 
 	&__card {

@@ -4,11 +4,10 @@
 @use 'lightbox-mini' as lm;
 
 .gallery {
-	padding-bottom: 4em;
+	// padding-bottom: 4em;
 	
 	&__container {
 		max-width: 560px;
-		padding: 0 s.$m1;
 	}
 
 	&__accordion-box {
@@ -43,6 +42,7 @@
 	}
 
 	&__box {
+		margin-top: s.$m1;
 		display: none;
 		grid-column: 250px;
 		gap: s.$m1;
@@ -107,8 +107,7 @@
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
 			gap: 0.5em;
-			margin-bottom: s.$m1;
-
+			margin-bottom: s.$m2;
 			.menu-tab {
 				padding: s.$m1 s.$m1;
 				font-size: fs.$smedium;
@@ -117,11 +116,12 @@
 				border-radius: s.$brstandard;
 				border: none;
 				cursor: pointer;
+				box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
 				transition: background-color 0.3s, color 0.3s;
 
 				&:hover {
-					background-color: c.$focus-color;
-					color: c.$light-white;
+					background-color: c.$light-white;
+					color: c.$main-color;
 				}
 			}
 
