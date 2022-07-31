@@ -108,5 +108,4 @@ nextBtn.addEventListener('click', () => {
 imgSlide.addEventListener('click', () => {
 	imgSlide.addEventListener('mousemove', zoomImg);
 })
-// imgSlide.addEventListener('mousemove', zoomImg);
 imgSlide.addEventListener('mouseout', resetImg);

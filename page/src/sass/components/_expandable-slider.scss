@@ -70,7 +70,7 @@
 			transform: translateX(-50%);
 			z-index: 5;
 
-			h2 {
+			h3 {
 				text-transform: uppercase;
 				font-size: fs.$smedium;
 				transform: rotate(-90deg);
@@ -142,7 +142,7 @@
 	flex-grow: 8;
 }
 
-.active .expandable-slider__item__text h2 {
+.active .expandable-slider__item__text h3 {
 	display: none;
 }
 

@@ -75,7 +75,6 @@
 		color: c.$light-white;
 		border: 1px solid c.$main-color;
 		border-radius: s.$brstandard;
-		// box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
 
 		&-heading {
 			margin-bottom: s.$m1;
@@ -97,7 +96,7 @@
 
 		.gmap_canvas {
 			position: relative;
-			padding-bottom: 75%; // This is the aspect ratio
+			padding-bottom: 75%;
 			height: 0;
 			overflow: hidden;
 

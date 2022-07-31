@@ -6,15 +6,25 @@ const allSections = document.querySelectorAll('.section');
 const footerYear = document.querySelector('.footer__year');
 const headingText = document.querySelector('.header__text');
 const expandableSlider = document.querySelector('.expandable-slider');
-const expandableSliderItems = document.querySelectorAll('.expandable-slider__item');
+const expandableSliderItems = document.querySelectorAll(
+	'.expandable-slider__item'
+);
+const body = document.body;
 
 const handleNav = () => {
+	if (nav.classList.contains('nav--active')) {
+		body.style.overflow = 'visible';
+	} else {
+		body.style.overflow = 'hidden';
+	}
+
 	nav.classList.toggle('nav--active');
 	burgerBtnBars.classList.remove('red-bars-color');
 
 	allNavItems.forEach((item) => {
 		item.addEventListener('click', () => {
 			nav.classList.remove('nav--active');
+			body.style.overflow = 'visible';
 			deleteAnimation();
 		});
 	});
@@ -67,7 +77,7 @@ function showSlide() {
 	});
 
 	handleBgColor(this);
-};
+}
 
 const handleBgColor = (item) => {
 	const slide = item.getAttribute('data-slide');
@@ -76,5 +86,7 @@ const handleBgColor = (item) => {
 
 handleCurrentYear();
 burgerBtn.addEventListener('click', handleNav);
-expandableSliderItems.forEach((item) => item.addEventListener('click', showSlide));
+expandableSliderItems.forEach((item) =>
+	item.addEventListener('click', showSlide)
+);
 window.addEventListener('scroll', handleObserver);
