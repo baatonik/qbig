@@ -3,7 +3,6 @@
 @use 'utilities/sizes' as s;
 
 .offers {
-
 	&__cards {
 		margin: 3em 0;
 	}
@@ -83,7 +82,6 @@
 
 			&-title {
 				width: 100%;
-
 				position: absolute;
 				left: 50%;
 				transform: translateX(-50%);
@@ -92,14 +90,15 @@
 			}
 
 			&-p {
-				text-align: left;
+				padding: 2em;
+				text-align: center;
 				width: 90%;
 			}
 		}
 	}
 }
 
-@media (min-width: 576px) {
+@media (min-width: 768px) {
 	.offers {
 		&__cards {
 			display: flex;
@@ -113,7 +112,7 @@
 	}
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1100px) {
 	.offers {
 		&__card {
 			width: 30%;

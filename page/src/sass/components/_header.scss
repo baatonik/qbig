@@ -82,10 +82,6 @@
 		&__text {
 			font-size: fs.$lmedium;
 		}
-
-		&__btn {
-			font-size: fs.$lmedium;
-		}
 	}
 }
 
@@ -99,6 +95,10 @@
 				font-size: fs.$xxlarge;
 			}
 		}
+
+		.fa-chevron-down {
+			bottom: 5%;
+		}
 	}
 }
 
@@ -109,21 +109,16 @@
 		padding-top: 0.5em;
 
 		&__heading {
-			margin-bottom: 0.2em;
-			font-size: fs.$xxlarge;
+			margin-bottom: 0.3em;
+			font-size: fs.$xlarge;
 
 			&-span {
-				font-size: fs.$largest;
+				font-size: fs.$xxlarge;
 			}
 		}
 
 		&__text {
 			margin-bottom: 3em;
-			font-size: fs.$lmedium;
-		}
-
-		&__btn {
-			padding: 0.5em 1.5em;
 			font-size: fs.$lmedium;
 		}
 

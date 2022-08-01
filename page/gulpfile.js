@@ -16,23 +16,25 @@ const paths = {
 	sass: './src/sass/**/*.scss',
 	js: './src/js/**/*.js',
 	img: './src/img/*',
-	imgExpandSlider: './src/img/expandable-slider/*',
+	imgIcons: './src/img/icons/*',
+	imgExpandSlider: './src/img/expandable_slider/*',
 	imgGalleryAutomatMachineInstallation:
-		'./src/img/gallery/automatic-machine-installation/*',
-	imgGalleryAutomatScrewSystem: './src/img/gallery/automatic-screw-system/*',
-	imgGalleryLineInstallation: './src/img/gallery/line-installation/*',
-	imgGalleryTechnologyTools: './src/img/gallery/technology-tools/*',
-	imgGalleryTestingMachine: './src/img/gallery/testing-machine/*',
+		'./src/img/gallery/automatic_machine_installation/*',
+	imgGalleryAutomatScrewSystem: './src/img/gallery/automatic_screw_system/*',
+	imgGalleryLineInstallation: './src/img/gallery/line_installation/*',
+	imgGalleryTechnologyTools: './src/img/gallery/technology_tools/*',
+	imgGalleryTestingMachine: './src/img/gallery/testing_machine/*',
 	sassDest: './dist/css',
 	jsDest: './dist/js',
 	imgDest: './dist/img',
-	imgExpandSliderDest: './dist/img/expandable-slider',
+	imgIconsDest: './dist/img/icons',
+	imgExpandSliderDest: './dist/img/expandable_slider',
 	imgGalleryAutomatMachineInstallationDest:
-		'./dist/img/gallery/automatic-machine-installation',
-	imgGalleryAutomatScrewSystemDest: './dist/img/gallery/automatic-screw-system',
-	imgGalleryLineInstallationDest: './dist/img/gallery/line-installation',
-	imgGalleryTechnologyToolsDest: './dist/img/gallery/technology-tools',
-	imgGalleryTestingMachineDest: './dist/img/gallery/testing-machine',
+		'./dist/img/gallery/automatic_machine_installation',
+	imgGalleryAutomatScrewSystemDest: './dist/img/gallery/automatic_screw_system',
+	imgGalleryLineInstallationDest: './dist/img/gallery/line_installation',
+	imgGalleryTechnologyToolsDest: './dist/img/gallery/technology_tools',
+	imgGalleryTestingMachineDest: './dist/img/gallery/testing_machine',
 	dist: './dist',
 	html: './html/**/*.kit',
 };
@@ -66,6 +68,7 @@ function javaScript(done) {
 
 function convertImages(done) {
 	src(paths.img).pipe(imagemin()).pipe(dest(paths.imgDest));
+	src(paths.imgIcons).pipe(imagemin()).pipe(dest(paths.imgIconsDest));
 	src(paths.imgExpandSlider)
 		.pipe(imagemin())
 		.pipe(dest(paths.imgExpandSliderDest));
