@@ -9,9 +9,9 @@
 
 	&__card {
 		position: relative;
-		margin: s.$m1 0;
+		margin: s.$m2 0;
 		height: 400px;
-		color: c.$pure-white;
+		color: c.$light-white;
 		text-align: center;
 		perspective: 1000px;
 
@@ -36,15 +36,15 @@
 			transition: transform 1s, opacity 1s;
 
 			&--first {
-				background-image: c.$gray-gradient, url('../img/truck.jpg');
+				background-image: c.$dark-gradient, url('../img/truck.jpg');
 			}
 
 			&--second {
-				background-image: c.$gray-gradient, url('../img/certificate.jpg');
+				background-image: c.$dark-gradient, url('../img/certificate.jpg');
 			}
 
 			&--third {
-				background-image: c.$gray-gradient, url('../img/british.jpg');
+				background-image: c.$dark-gradient, url('../img/british.jpg');
 			}
 
 			&-title {

@@ -58,12 +58,12 @@ const handleObserver = () => {
 	allSections.forEach((section) => {
 		if (
 			section.classList.contains('light-section') &&
-			section.offsetTop <= currentSection + 60
+			section.offsetTop <= currentSection + 100
 		) {
 			burgerBtnBars.classList.add('red-bars-color');
 		} else if (
 			!section.classList.contains('light-section') &&
-			section.offsetTop <= currentSection + 60
+			section.offsetTop <= currentSection + 100
 		) {
 			burgerBtnBars.classList.remove('red-bars-color');
 		}

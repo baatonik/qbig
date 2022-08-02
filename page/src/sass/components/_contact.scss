@@ -44,7 +44,7 @@
 		}
 
 		&-send-btn {
-			padding: s.$m1 s.$m1;
+			padding: s.$m1 s.$m2;
 			margin: s.$m1 0;
 			font-size: fs.$smedium;
 			font-weight: bold;
@@ -56,12 +56,10 @@
 			text-transform: uppercase;
 			transition: background-color 0.3s;
 			outline: none;
-			// box-shadow: c.$box-shadow;
 			cursor: pointer;
 
 			&:hover {
-				background-color: c.$focus-color;
-				// color: c.$main-color;
+				background-color: c.$hover-color;
 			}
 
 			&:focus {
@@ -74,7 +72,6 @@
 		width: 100%;
 		padding: 1em;
 		margin-bottom: s.$m1;
-		// background-image: c.$red-gradient-solid;
 		background-color: c.$main-color;
 		color: c.$light-white;
 		border: 1px solid c.$main-color;

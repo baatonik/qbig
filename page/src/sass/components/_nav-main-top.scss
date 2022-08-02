@@ -9,12 +9,11 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 100vh;
+	height: 100%;
 	width: 100%;
 	text-transform: uppercase;
 	transform: translateX(100%);
 	transition: transform 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
-	// background-image: c.$red-gradient-solid;
 	background-color: c.$main-color;
 	z-index: 100;
 
@@ -27,7 +26,7 @@
 		display: block;
 		padding: 0.3em 0.3em;
 		font-size: fs.$lmedium;
-		color: c.$pure-white;
+		color: c.$light-white;
 		text-decoration: none;
 
 		&::before {
@@ -50,7 +49,7 @@
 
 @media (min-width: 768px) {
 	.nav {
-		height: fs.$mlarge;
+		height: fs.$slarge;
 		transform: translateX(0);
 		overflow: hidden;
 		box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
@@ -58,7 +57,7 @@
 		.active-link {
 			position: relative;
 			font-weight: bold;
-			background-color: c.$focus-color;
+			background-color: c.$hover-color;
 		}
 
 		&__items {
@@ -75,7 +74,7 @@
 				transition: background-color 0.3s;
 
 				&:hover {
-					background-color: c.$focus-color;
+					background-color: c.$hover-color;
 				}
 
 				&:focus {

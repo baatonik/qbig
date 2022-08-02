@@ -6,7 +6,7 @@
 .aboutus {
 	position: relative;
 	color: c.$light-white;
-	background-image: c.$dark-gradient, url('../img/aboutuss-small.jpg');
+	@include mix.heroImages('../img/aboutuss-small.jpg');
 	background-size: cover;
 	background-position: center;
 
@@ -37,7 +37,7 @@
 	}
 
 	&__contact-btn {
-		padding: 0.5em s.$m1;
+		padding: s.$m1 s.$m2;
 		margin-top: s.$m1;
 		margin-bottom: 3em;
 		font-size: fs.$smedium;
@@ -53,7 +53,7 @@
 		cursor: pointer;
 
 		&:hover {
-			background-color: c.$focus-color;
+			background-color: c.$hover-color;
 		}
 
 		&:focus {
@@ -82,26 +82,14 @@
 
 @media (min-width: 992px) {
 	.aboutus {
-		background-image: c.$dark-gradient, url('../img/aboutuss-big.jpg');
+		@include mix.heroImages('../img/aboutuss-big.jpg');
 
 		&__info{
-			padding-left: 7em;
-			padding-right: 7em;
 
 			&-description {
 				text-align: justify;
 			}
 		}
 		
-	}
-}
-
-@media (min-width: 1100px) {
-	.aboutus {
-
-		&__info{
-			padding-left: 10em;
-			padding-right: 10em;
-		}
 	}
 }

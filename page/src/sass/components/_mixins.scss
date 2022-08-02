@@ -1,7 +1,7 @@
 @use 'utilities/colors' as c;
 
 @mixin heroImages($bgImg) {
-	background-image: c.$gray-gradient, url($bgImg);
+	background-image: c.$dark-gradient, url($bgImg);
 	background-size: cover;
 	background-position: center;
 }

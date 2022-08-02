@@ -4,14 +4,12 @@
 @use 'utilities/sizes' as s;
 
 .header {
-	position: relative;
-	padding-top: 2em;
+	justify-content: center;
 	height: 100vh;
 	color: c.$light-white;
 	@include mix.heroImages('../img/headersmall.jpg');
 
 	&__heading {
-		margin-bottom: 0.3em;
 		font-size: fs.$large;
 		font-weight: bold;
 		text-shadow: c.$heading-shadow;
@@ -24,13 +22,15 @@
 	}
 
 	&__text {
+		display: block;
+		margin-top: s.$m1;
 		font-size: fs.$medium;
-		margin-bottom: 3em;
-		color: c.$light-white;
 	}
 
 	&__btn {
-		padding: 0.8em 1.6em;
+		display: block;
+		margin-top: s.$m2;
+		padding: s.$m1 s.$m2;
 		font-size: fs.$medium;
 		font-weight: bold;
 		background-color: c.$main-color;
@@ -44,8 +44,7 @@
 		cursor: pointer;
 
 		&:hover {
-			background-color: c.$focus-color;
-			// color: c.$main-color;
+			background-color: c.$hover-color;
 		}
 
 		&:focus {
@@ -58,7 +57,7 @@
 		padding: s.$m1 0;
 		left: 50%;
 		transform: translate(-50%);
-		bottom: 10%;
+		bottom: 2rem;
 		font-size: fs.$medium;
 		color: c.$light-white;
 	}
@@ -84,45 +83,9 @@
 	}
 }
 
-@media (min-width: 768px) {
-	.header {
-		&__heading {
-			margin-top: 0.5em;
-			font-size: fs.$xlarge;
-
-			&-span {
-				font-size: fs.$xxlarge;
-			}
-		}
-
-		.fa-chevron-down {
-			bottom: 5%;
-		}
-	}
-}
-
 @media (min-width: 992px) {
 	.header {
 		@include mix.heroImages('../img/headerbig.jpg');
 		background-attachment: fixed;
-		padding-top: 0.5em;
-
-		&__heading {
-			margin-bottom: 0.3em;
-			font-size: fs.$xlarge;
-
-			&-span {
-				font-size: fs.$xxlarge;
-			}
-		}
-
-		&__text {
-			margin-bottom: 3em;
-			font-size: fs.$lmedium;
-		}
-
-		.fa-chevron-down {
-			bottom: 5%;
-		}
 	}
 }
