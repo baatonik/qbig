@@ -6,7 +6,9 @@
 .aboutus {
 	position: relative;
 	color: c.$light-white;
-	@include mix.heroImages('../img/aboutuss-small.jpg');
+	background-image: c.$dark-gradient, url('../img/aboutuss-small.jpg');
+	background-size: cover;
+	background-position: center;
 
 	.underline {
 		background-color: c.$light-white;
@@ -15,18 +17,17 @@
 
 	&__info {
 		padding: s.$m1 s.$m1;
-		margin-bottom: s.$m1;
 		font-family: 'Poppins', sans-serif;
+		text-align: center;
 
 		&-description {
 			font-size: fs.$smedium;
-			text-align: center;
 			margin-bottom: s.$m2;
 		}
 
 		&-list {
-			text-align: center;
 			list-style: none;
+			margin-bottom: 4em;
 
 			&-item {
 				text-transform: uppercase;
@@ -47,14 +48,12 @@
 		border-radius: s.$brstandard;
 		text-decoration: none;
 		text-transform: uppercase;
-		transition: background-color 0.3s, color 0.35s;
+		transition: background-color 0.3s;
 		outline: none;
-		box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7);
 		cursor: pointer;
 
 		&:hover {
-			background-color: c.$light-white;
-			color: c.$main-color;
+			background-color: c.$focus-color;
 		}
 
 		&:focus {
@@ -66,8 +65,6 @@
 @media (min-width: 576px) {
 	.aboutus {
 		&__info {
-			padding-left: 4em;
-			padding-right: 4em;
 			margin-bottom: 4em;
 
 			&-description {
@@ -85,7 +82,7 @@
 
 @media (min-width: 992px) {
 	.aboutus {
-		@include mix.heroImages('../img/aboutuss-big.jpg');
+		background-image: c.$dark-gradient, url('../img/aboutuss-big.jpg');
 
 		&__info{
 			padding-left: 7em;
@@ -93,20 +90,9 @@
 
 			&-description {
 				text-align: justify;
-				font-size: fs.$medium;
-			}
-	
-			&-list {
-	
-				&-item {
-					font-size: fs.$medium;
-				}
 			}
 		}
 		
-		&__contact-btn {
-			font-size: fs.$medium;
-		}
 	}
 }
 

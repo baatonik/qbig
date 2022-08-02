@@ -36,15 +36,15 @@
 			transition: transform 1s, opacity 1s;
 
 			&--first {
-				background-image: c.$red-light-gradient, url('../img/truck.jpg');
+				background-image: c.$gray-gradient, url('../img/truck.jpg');
 			}
 
 			&--second {
-				background-image: c.$red-light-gradient, url('../img/certificate.jpg');
+				background-image: c.$gray-gradient, url('../img/certificate.jpg');
 			}
 
 			&--third {
-				background-image: c.$red-light-gradient, url('../img/british.jpg');
+				background-image: c.$gray-gradient, url('../img/british.jpg');
 			}
 
 			&-title {
@@ -74,7 +74,7 @@
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-			background-image: c.$red-gradient-solid;
+			background-image: c.$dark-gradient;
 			border-radius: s.$brstandard;
 			opacity: 0;
 			transform: rotateY(180deg);

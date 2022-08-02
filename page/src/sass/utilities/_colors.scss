@@ -2,9 +2,12 @@ $pure-white: #fff;
 $black: #000;
 $gray: #333;
 $light-white: #eee;
-$main-color: #eb0000;
-$focus-color: #960101;
-$light-red: #c92525;
+// $main-color: #eb0000;
+$main-color: #a40001;
+// $focus-color: #960101;
+$focus-color: #000000;
+// $light-red: #c92525;
+$light-red: #12263a;
 $transparent-black: rgba(0, 0, 0, 0.8);
 $red-section-bgc: rgb(65, 59, 59);
 
@@ -13,6 +16,7 @@ $gray-gradient: linear-gradient(
 	rgba(32, 30, 30, 0.75),
 	rgba(83, 73, 73, 0.75)
 );
+$dark-gradient: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9));
 $red-gradient-solid: linear-gradient(90deg, rgb(241, 66, 20), rgb(184, 10, 42));
 $light-gradient-solid: linear-gradient(
 	160deg,
@@ -21,23 +25,17 @@ $light-gradient-solid: linear-gradient(
 );
 $red-light-gradient: linear-gradient(
 	180deg,
-	rgba(201, 37, 37, .55),
-	rgba(238, 238, 238, .55)
+	rgba(201, 37, 37, 0.55),
+	rgba(238, 238, 238, 0.55)
 );
 $light-red-gradient: linear-gradient(
 	180deg,
-	rgba(238, 238, 238, .75),
-	rgba(201, 37, 37, .75)
+	rgba(238, 238, 238, 0.75),
+	rgba(201, 37, 37, 0.75)
 );
 
-$heading-shadow: 1px 1px 1px #1f1f1f, 1px 2px 1px #1f1f1f, 1px 3px 1px #1f1f1f,
-1px 4px 1px #1f1f1f, 1px 5px 1px #1f1f1f, 1px 6px 1px #1f1f1f,
-1px 7px 1px #1f1f1f, 1px 8px 1px #1f1f1f, 1px 9px 1px #1f1f1f,
-1px 10px 1px #1f1f1f, 1px 18px 6px rgba(16, 16, 16, 0.4),
-1px 22px 10px rgba(16, 16, 16, 0.2), 1px 25px 35px rgba(16, 16, 16, 0.2),
-1px 30px 60px rgba(16, 16, 16, 0.4);
-
-$box-shadow: 3px 3px 5px $black;
+$heading-shadow: 2px 2px 8px $black;
+$box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
 
 $slide1-color: #e9ebdd;
 $slide2-color: #e1e1e1;

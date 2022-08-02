@@ -9,7 +9,8 @@
 
 .footer {
 	overflow: hidden;
-	background-image: c.$red-gradient-solid;
+	// background-image: c.$red-gradient-solid;
+	background-color: c.$main-color;
 	color: c.$light-white;
 
 	hr {
@@ -21,7 +22,6 @@
 			margin-bottom: 0.5em;
 			font-size: fs.$slarge;
 			font-weight: bold;
-			text-shadow: 5px 5px 5px c.$black;
 
 			&--span {
 				font-size: fs.$mlarge;

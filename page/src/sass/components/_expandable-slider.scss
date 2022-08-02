@@ -3,22 +3,22 @@
 @use 'utilities/sizes' as s;
 
 [data-bg='slide1'] {
-	background-color: c.$slide1-color;
+	background-color: c.$black;
 }
 [data-bg='slide2'] {
-	background-color: c.$slide2-color;
+	background-color: c.$black;
 }
 [data-bg='slide3'] {
-	background-color: c.$slide3-color;
+	background-color: c.$black;
 }
 [data-bg='slide4'] {
-	background-color: c.$slide4-color;
+	background-color: c.$black;
 }
 [data-bg='slide5'] {
-	background-color: c.$slide5-color;
+	background-color: c.$black;
 }
 [data-bg='slide6'] {
-	background-color: c.$slide6-color;
+	background-color: c.$black;
 }
 
 .slider-container {
