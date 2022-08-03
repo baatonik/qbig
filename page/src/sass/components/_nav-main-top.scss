@@ -5,7 +5,6 @@
 
 .nav {
 	position: fixed;
-	top: 0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -14,75 +13,103 @@
 	text-transform: uppercase;
 	transform: translateX(100%);
 	transition: transform 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
-	background-color: c.$main-color;
+	background-image: c.$background-red-svg;
+	background-size: cover;
 	z-index: 100;
 
 	&--active {
 		transform: translateX(0);
 	}
 
-	&__items-item {
-		position: relative;
-		display: block;
-		padding: 0.3em 0.3em;
-		font-size: fs.$lmedium;
-		color: c.$light-white;
-		text-decoration: none;
-
-		&::before {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 3px;
-			height: 100%;
-			transform: scaleY(0);
-			background-color: c.$light-white;
-			transition: transform 0.3s;
-			content: '';
+	&__items {
+		&-item {
+			padding: 0.2em;
+			font-size: fs.$lmedium;
 		}
 
-		&:hover::before {
-			transform: scaleY(1);
+		&-link {
+			color: c.$light-white;
+			text-decoration: none;
 		}
 	}
 }
 
 @media (min-width: 768px) {
 	.nav {
-		height: fs.$slarge;
+		height: 6rem;
 		transform: translateX(0);
+		background-image: none;
+		background-color: c.$black;
 		overflow: hidden;
 		box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
 
-		.active-link {
-			position: relative;
-			font-weight: bold;
-			background-color: c.$hover-color;
-		}
-
 		&__items {
-			width: 100%;
 			display: flex;
-			justify-content: center;
+			justify-content: flex-end;
+			width: 100%;
+			height: 100%;
+			max-width: 1200px;
 
 			&-item {
 				display: flex;
-				padding: 0 s.$m1;
-				line-height: fs.$mlarge;
-				font-size: fs.$medium;
+				margin: auto 0;
+				padding: 0 0.5em;
+				line-height: fs.$smedium;
+
+				&:first-of-type {
+					margin-right: auto;
+				}
+			}
+
+			&-link {
+				padding: 0.5em;
+				font-size: fs.$smedium;
 				outline: none;
-				transition: background-color 0.3s;
+				border-radius: 15px;
+				transition: background-color 0.3s, color 0.3s box-shadow 0.3s;
 
-				&:hover {
-					background-color: c.$hover-color;
+				&.active-link.standard-link {
+					color: c.$menu-hover;
 				}
 
-				&:focus {
-					background-color: c.$focus-color;
+				&.active-link.contact-link {
+					color: c.$menu-hover;
+
+					&:hover {
+						color: c.$light-white;
+					}
 				}
 
-				&:hover::before {
-					transform: scaleY(0);
+				&.standard-link {
+					&:hover {
+						color: c.$main-color;
+					}
+				}
+
+				&.home-link {
+					font-size: fs.$medium;
+					text-transform: lowercase;
+
+					span {
+						font-size: fs.$lmedium;
+						text-transform: uppercase;
+						color: c.$menu-hover;
+					}
+				}
+
+				&.contact-link {
+					color: c.$light-white;
+					border: 2px solid c.$main-color;
+
+					&:hover {
+						background-color: c.$main-color;
+					}
+				}
+
+				&:focus-visible {
+					&.standard-link, &.contact-link, &.home-link {
+						box-shadow: 0 0 0 3px c.$menu-hover;
+					}
 				}
 			}
 		}

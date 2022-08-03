@@ -13,7 +13,7 @@
 	transition: width 0.4s;
 	z-index: 1000;
 
-	&:focus {
+	&:focus-visible {
 		outline: none;
 		border: 1px solid c.$gray;
 		border-radius: s.$brstandard;

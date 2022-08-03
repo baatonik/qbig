@@ -17,10 +17,10 @@
 
 	&__info {
 		padding: s.$m1 s.$m1;
-		font-family: 'Poppins', sans-serif;
 		text-align: center;
 
 		&-description {
+			font-family: 'Poppins', sans-serif;
 			font-size: fs.$smedium;
 			margin-bottom: s.$m2;
 		}
@@ -56,7 +56,7 @@
 			background-color: c.$hover-color;
 		}
 
-		&:focus {
+		&:focus-visible {
 			background-color: c.$focus-color;
 		}
 	}

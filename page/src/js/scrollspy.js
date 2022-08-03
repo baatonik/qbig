@@ -1,6 +1,6 @@
-const menuItems = document.querySelectorAll('.nav__items-item');
+const menuItems = document.querySelectorAll('.nav__items-link');
 const scrollSpySections = document.querySelectorAll('.section');
-const lastSection = document.querySelector('.nav__items-item:last-of-type');
+const lastSection = document.querySelector('.nav__items-link:last-of-type');
 
 const handleCrollSpy = (params) => {
 	if (document.body.classList.contains('main-page')) {

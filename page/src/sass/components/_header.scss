@@ -47,7 +47,7 @@
 			background-color: c.$hover-color;
 		}
 
-		&:focus {
+		&:focus-visible {
 			background-color: c.$focus-color;
 		}
 	}

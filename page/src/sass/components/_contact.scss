@@ -30,6 +30,7 @@
 
 			&--message {
 				width: 100%;
+	
 				resize: vertical;
 			}
 		}
@@ -38,6 +39,7 @@
 			margin: s.$m1 0;
 
 			.checkbox{
+	
 				margin-left: 0.2em;
 				font-size: fs.$smedium;
 			}
@@ -62,7 +64,7 @@
 				background-color: c.$hover-color;
 			}
 
-			&:focus {
+			&:focus-visible {
 				background-color: c.$focus-color;
 			}
 		}
