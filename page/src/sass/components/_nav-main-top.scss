@@ -25,11 +25,34 @@
 		&-item {
 			padding: 0.2em;
 			font-size: fs.$lmedium;
+			
+			&::before {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 3px;
+				height: 100%;
+				transform: scaleY(0);
+				background-color: c.$light-white;
+				transition: transform 0.3s;
+				content: '';
+			}
+	
+			&:hover::before {
+				transform: scaleY(1);
+			}
 		}
 
 		&-link {
 			color: c.$light-white;
 			text-decoration: none;
+			border-radius: 15px;
+			padding: 0.2em;
+
+			&.active-link {
+				text-decoration: underline;
+				text-underline-offset: 5px;
+			}
 		}
 	}
 }
@@ -59,6 +82,10 @@
 				&:first-of-type {
 					margin-right: auto;
 				}
+
+				&::before {
+					content: none;
+				}
 			}
 
 			&-link {
@@ -67,6 +94,10 @@
 				outline: none;
 				border-radius: 15px;
 				transition: background-color 0.3s, color 0.3s box-shadow 0.3s;
+
+				&.active-link {
+					text-decoration: none;
+				}
 
 				&.active-link.standard-link {
 					color: c.$menu-hover;
@@ -107,7 +138,9 @@
 				}
 
 				&:focus-visible {
-					&.standard-link, &.contact-link, &.home-link {
+					&.standard-link,
+					&.contact-link,
+					&.home-link {
 						box-shadow: 0 0 0 3px c.$menu-hover;
 					}
 				}

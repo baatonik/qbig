@@ -39,10 +39,10 @@
 		border-radius: s.$brstandard;
 		text-decoration: none;
 		text-transform: uppercase;
-		transition: background-color 0.3s;
+		transition: background-color 0.5s;
 		outline: none;
-		cursor: pointer;
-
+		cursor: pointer;overflow: hidden;
+		
 		&:hover {
 			background-color: c.$hover-color;
 		}
@@ -63,7 +63,7 @@
 	}
 
 	.fa-chevron-down:hover {
-		color: c.$focus-color;
+		color: c.$main-color;
 	}
 }
 

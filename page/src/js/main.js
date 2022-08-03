@@ -1,6 +1,6 @@
 const nav = document.querySelector('.nav');
 const burgerBtn = document.querySelector('.burger-btn');
-const allNavItems = document.querySelectorAll('.nav__items');
+const allNavItems = document.querySelectorAll('.nav__items-item');
 const burgerBtnBars = document.querySelector('.burger-btn__bars');
 const allSections = document.querySelectorAll('.section');
 const footerYear = document.querySelector('.footer__year');
@@ -12,11 +12,11 @@ const expandableSliderItems = document.querySelectorAll(
 const body = document.body;
 
 const handleNav = () => {
-	if (nav.classList.contains('nav--active')) {
-		body.style.overflow = 'visible';
-	} else {
-		body.style.overflow = 'hidden';
-	}
+	// if (nav.classList.contains('nav--active')) {
+	// 	body.style.overflow = 'visible';
+	// } else {
+	// 	body.style.overflow = 'hidden';
+	// }
 
 	nav.classList.toggle('nav--active');
 	burgerBtnBars.classList.remove('red-bars-color');
@@ -58,12 +58,12 @@ const handleObserver = () => {
 	allSections.forEach((section) => {
 		if (
 			section.classList.contains('light-section') &&
-			section.offsetTop <= currentSection + 100
+			section.offsetTop <= currentSection + 50
 		) {
 			burgerBtnBars.classList.add('red-bars-color');
 		} else if (
 			!section.classList.contains('light-section') &&
-			section.offsetTop <= currentSection + 100
+			section.offsetTop <= currentSection + 50
 		) {
 			burgerBtnBars.classList.remove('red-bars-color');
 		}
