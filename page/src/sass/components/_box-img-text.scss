@@ -7,6 +7,7 @@
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: flex-start;
+	margin: 3em 0;
 
 	&__img {
 		width: 100%;
@@ -14,11 +15,6 @@
 			width: 100%;
 			margin-bottom: s.$m2;
 			border-radius: s.$brstandard;
-			transition: transform 0.5s;
-
-			&:hover {
-				transform: scale(0.95);
-			}
 		}
 	}
 
@@ -33,6 +29,10 @@
 		strong {
 			font-size: fs.$smedium;
 			font-weight: bold;
+		}
+
+		&:last-child{
+			margin-bottom: 0;
 		}
 	}
 
