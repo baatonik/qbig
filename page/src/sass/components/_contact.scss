@@ -21,25 +21,30 @@
 		}
 
 		&-input {
-			width: 100%;
+			width: 97%;
 			padding: s.$m1;
-			margin: s.$m1 0;
+			margin: s.$m1 0.2em;
 			font-size: fs.$smedium;
 			border: none;
 			border-radius: s.$brstandard;
+			outline: none;
+			transition: box-shadow 0.3s;
 
 			&--message {
-				width: 100%;
-	
+				width: 97%;
+
 				resize: vertical;
+			}
+
+			&:focus-visible{
+				box-shadow: 0 0 0 3px c.$menu-hover;
 			}
 		}
 
 		&-rodo {
 			margin: s.$m1 0;
 
-			.checkbox{
-	
+			.checkbox {
 				margin-left: 0.2em;
 				font-size: fs.$smedium;
 			}

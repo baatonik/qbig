@@ -1,63 +1,55 @@
 @use 'utilities/colors' as c;
 @use 'utilities/sizes' as s;
-@use 'mixins' as mix;
 
-.burger-btn {
-	position: fixed;
-	top: s.$m1;
-	right: s.$m1;
-	padding: s.$m1;
-	background: none;
-	border: 1px solid transparent;
+.burger__btn {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 30px;
+	height: 25px;
+	padding: 1em;
+	border: transparent;
+	border-radius: 5px;
+	background-color: transparent;
 	cursor: pointer;
-	transition: width 0.4s;
+	outline: none;
+	transition: box-shadow 0.3s;
 	z-index: 1000;
 
-	&:focus-visible {
-		outline: none;
-		border: 1px solid c.$gray;
-		border-radius: s.$brstandard;
+	&:focus-visible{
+		box-shadow: 0 0 0 1px c.$menu-hover;
 	}
 
-	&:hover {
-		.burger-btn__bars::after,
-		.burger-btn__bars::before {
-			width: 100%;
-		}
+	&--line {
+		display: block;
+		position: absolute;
+		width: 25px;
+		height: 2px;
+		background-color: c.$light-white;
+		transition: opacity 0.5s cubic-bezier(0.9, 0, 0.33, 1),
+			transform 0.5s cubic-bezier(0.9, 0, 0.33, 1), top 0.3s, bottom 0.3s;
 	}
 
-	&__box {
-		position: relative;
-		width: 40px;
-		height: 30px;
+	&--line:nth-child(1).active-line {
+		opacity: 0;
 	}
 
-	&__bars,
-	&__bars::after,
-	&__bars::before {
-		@include mix.burgerBtn;
+	&--line:nth-child(2) {
+		top: 5px;
 	}
 
-	&__bars {
-		width: 100%;
-
-		&::after {
-			top: 13px;
-			width: 60%;
-		}
-
-		&::before {
-			top: 27px;
-			width: 30%;
-			transition-delay: 0.1s;
-		}
+	&--line:nth-child(2).active-line {
+		transform: rotate(45deg) translate(4.5px, 5.5px);
 	}
-}
 
-.red-bars-color,
-.red-bars-color::after,
-.red-bars-color::before {
-	background-color: c.$main-color;
+	&--line:nth-child(3) {
+		bottom: 5px;
+	}
+
+	&--line:nth-child(3).active-line {
+		transform: rotate(-45deg) translate(4.5px, -5.5px);
+	}
 }
 
 @media (min-width: 768px) {

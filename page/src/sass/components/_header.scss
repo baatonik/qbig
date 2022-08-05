@@ -7,7 +7,10 @@
 	justify-content: center;
 	height: 100vh;
 	color: c.$light-white;
-	@include mix.heroImages('../img/headersmall.jpg');
+
+	&__hero-bg {
+		@include mix.heroImages('../img/headersmall.jpg');
+	}
 
 	&__heading {
 		font-size: fs.$large;
@@ -35,14 +38,10 @@
 		font-weight: bold;
 		background-color: c.$main-color;
 		color: c.$light-white;
-		border: none;
-		border-radius: s.$brstandard;
-		text-decoration: none;
-		text-transform: uppercase;
 		transition: background-color 0.5s;
-		outline: none;
-		cursor: pointer;overflow: hidden;
-		
+
+		@include mix.glowBtn;
+
 		&:hover {
 			background-color: c.$hover-color;
 		}
@@ -85,7 +84,9 @@
 
 @media (min-width: 992px) {
 	.header {
-		@include mix.heroImages('../img/headerbig.jpg');
-		background-attachment: fixed;
+		&__hero-bg {
+			@include mix.heroImages('../img/headerbig.jpg');
+			background-attachment: fixed;
+		}
 	}
 }

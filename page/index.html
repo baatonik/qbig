@@ -25,36 +25,39 @@
 </head>
 
 <body class="main-page">
-    <nav>
-    <button class="burger-btn">
-        <div class="burger-btn__box">
-            <div class="burger-btn__bars"></div>
-        </div>
-    </button>
+    <nav>    
+    <div class="navbar">
+        <button class="burger__btn">
+            <div class="burger__btn--line"></div>
+            <div class="burger__btn--line"></div>
+            <div class="burger__btn--line"></div>
+        </button>
+        <a href="#home" class="navbar__logo"><span>q</span>big</a>
+    </div>
     <div class="nav">
         <div class="nav__items">
             <div class="nav__items-item">
                 <a href="#home" class="home-link nav__items-link active-link"><span>q</span>big</a>
             </div>
             <div class="nav__items-item">
-                <a href="#offers" class="standard-link nav__items-link">Oferta</a>
+                <a href="#offers" class="standard-link nav__items-link"><i class="fa-solid fa-file-lines"></i> Oferta</a>
             </div>
             <div class="nav__items-item">
-                <a href="#projects" class="standard-link nav__items-link">Projekty</a>
+                <a href="#projects" class="standard-link nav__items-link"><i class="fa-solid fa-diagram-project"></i> Projekty</a>
             </div>
             <div class="nav__items-item">
-                <a href="#gallery" class="standard-link nav__items-link">Galeria</a>
+                <a href="#gallery" class="standard-link nav__items-link"><i class="fa-solid fa-image"></i> Galeria</a>
             </div>
             <div class="nav__items-item">
-                <a href="#aboutus" class="standard-link nav__items-link">O&nbsp;firmie</a>
+                <a href="#aboutus" class="standard-link nav__items-link"><i class="fa-solid fa-person-circle-question"></i> O&nbsp;firmie</a>
             </div>
             <div class="nav__items-item">
-                <a href="#contact" class="contact-link nav__items-link">Kontakt</a>
+                <a href="#contact" class="contact-link nav__items-link"><i class="fa-solid fa-envelope"></i>  Kontakt</a>
             </div>
         </div>
     </div>
 </nav>
-    <header class="header section" id="home">
+    <header id="home" class="header section short-section">
     <p class="header__heading" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000"><span
             class="header__heading-span">q</span>big</p>
     <h1 class="header__text" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">Automatyka i robotyka</h1>
@@ -62,9 +65,10 @@
         <a href="#offers" class="header__btn">oferta</a>
     </div>
     <a href="#offers"><i class="fa-solid fa-chevron-down bounce-top"></i></a>
+    <div class="header__hero-bg kenburns-top"></div>
 </header>
     <main class="main">
-        <section id="offers" class="offers section light-section">
+        <section id="offers" class="offers section light-section long-section">
     <div class="wrapper">
         <h2 class="section-heading">oferta</h2>
         <div class="underline" data-aos="fade-right"></div>
@@ -178,7 +182,7 @@
         </div>
     </div>
 </section>
-        <section id="projects" class="projects section red-section">
+        <section id="projects" class="projects section red-section long-section">
     <div class="white-block white-block-left"></div>
     <div class="white-block white-block-right"></div>
     <h2 class="section-heading">projekty</h2>
@@ -186,12 +190,15 @@
     <div class="wrapper">
         <div class="box-img-text">
             <div class="box-img-text__img" data-aos="flip-left" data-aos-duration="800">
-                <img src="./dist/img/construction-small.jpg" alt="Zaawansowany szkic technologiczny z wymiarami jakiś projekt">
+                <img src="./dist/img/construction-small.jpg"
+                    alt="Zaawansowany szkic technologiczny z wymiarami jakiś projekt">
             </div>
             <div class="box-img-text__text" data-aos="fade-left" data-aos-duration="800">
                 <p class="light-text">
-                    Nasz dział konstrukcyjny korzysta z&nbsp;jednego z&nbsp;najnowocześniejszych programów <strong>CAD/CAM Creo
-                    firmy PTC</strong>, który daje ogromne możliwości modelowania bryłowego i&nbsp;powierzchniowego. Program
+                    Nasz dział konstrukcyjny korzysta z&nbsp;jednego z&nbsp;najnowocześniejszych programów
+                    <strong>CAD/CAM Creo
+                        firmy PTC</strong>, który daje ogromne możliwości modelowania bryłowego i&nbsp;powierzchniowego.
+                    Program
                     pozwala na realizację bardzo złożonych projektów, a&nbsp;także umożliwia wymianę plików
                     z&nbsp;innymi programami inżynierskimi. Dzięki temu możemy wykorzystać pliki klientów, co jest
                     szczególnie ważne przy projektowaniu urządzeń pomiarowych lub montażowych.
@@ -308,7 +315,7 @@
         </div>
     </div>
 </section>
-        <section id="gallery" class="gallery section light-section">
+        <section id="gallery" class="gallery section light-section short-section">
     <div class="wrapper">
         <h2 class="section-heading">Galeria</h2>
         <div class="underline" data-aos="fade-right"></div>
@@ -536,13 +543,13 @@
         </div>
     </div>
 </section>
-        <section id="aboutus" class="aboutus section">
+        <section id="aboutus" class="aboutus section short-section">
     <div class="wrapper">
-    <div class="white-block white-block-left"></div>
-    <div class="white-block white-block-right"></div>
-    <h2 class="section-heading">O firmie</h2>
-    <div class="underline" data-aos="fade-right"></div>
-    
+        <div class="white-block white-block-left"></div>
+        <div class="white-block white-block-right"></div>
+        <h2 class="section-heading">O firmie</h2>
+        <div class="underline" data-aos="fade-right"></div>
+
         <div class="aboutus__info">
             <p class="aboutus__info-description" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
                 Automatyka
@@ -559,11 +566,12 @@
                 <li class="aboutus__info-list-item">Konkurencyjne ceny</li>
                 <li class="aboutus__info-list-item">Wsparcie techniczne</li>
             </ul>
-            <a href="#contact" class="aboutus__contact-btn" >Napisz do nas</a>
+            <a href="#contact" class="aboutus__contact-btn">Napisz do nas</a>
         </div>
+        <div class="aboutus__hero-bg"></div>
     </div>
 </section>
-        <section id="contact" class="contact section light-section">
+        <section id="contact" class="contact section light-section long-section">
     <div class="wrapper">
         <h2 class="section-heading">Kontakt</h2>
         <div class="underline" data-aos="fade-right" data-aos-duration="1000"></div>
@@ -608,7 +616,7 @@
     </div>
 </section>
     </main>
-    <footer class="footer section">
+    <footer class="footer">
     <div class="white-block white-block-right"></div>
     <div class="wrapper">
         <div class="footer__box">
@@ -631,11 +639,7 @@
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="dist/js/aossettings.min.js"></script>
-    <script src="dist/js/slicksettings.min.js"></script>
     <script src="dist/js/lightbox-mini.min.js"></script>
-    <script src="dist/js/accordion.min.js"></script>
-    <script src="dist/js/scrollspy.min.js"></script>
     <script src="dist/js/main.min.js"></script>
 </body>
 

@@ -2,18 +2,16 @@
 @use 'utilities/sizes' as s;
 @use 'utilities/colors' as c;
 
-.footer.section{
-	padding-bottom: 0;
-	padding-top: 4em;
-}
-
 .footer {
+	position: relative;
+	padding: 1.5em 1.5em 1em;
 	overflow: hidden;
-	// background-image: c.$red-gradient-solid;
 	background-color: c.$main-color;
 	color: c.$light-white;
 
 	hr {
+		position: absolute;
+		left: 0;
 		width: 120%;
 	}
 
@@ -59,7 +57,7 @@
 	}
 
 	&__bottom-text {
-		padding: s.$m1;
+		padding-top: s.$m1;
 		font-size: fs.$smedium;
 		text-align: center;
 	}

@@ -6,9 +6,10 @@
 .aboutus {
 	position: relative;
 	color: c.$light-white;
-	@include mix.heroImages('../img/aboutuss-small.jpg');
-	background-size: cover;
-	background-position: center;
+
+	&__hero-bg {
+		@include mix.heroImages('../img/aboutuss-small.jpg');
+	}
 
 	.underline {
 		background-color: c.$light-white;
@@ -44,13 +45,8 @@
 		font-weight: bold;
 		background-color: c.$main-color;
 		color: c.$light-white;
-		border: none;
-		border-radius: s.$brstandard;
-		text-decoration: none;
-		text-transform: uppercase;
-		transition: background-color 0.5s;
-		outline: none;
-		cursor: pointer;
+
+		@include mix.glowBtn;
 
 		&:hover {
 			background-color: c.$hover-color;
@@ -76,20 +72,22 @@
 
 @media (min-width: 768px) {
 	.aboutus {
-		background-attachment: fixed;
+		&__hero-bg {
+			background-attachment: fixed;
+		}
 	}
 }
 
 @media (min-width: 992px) {
 	.aboutus {
-		@include mix.heroImages('../img/aboutuss-big.jpg');
+		&__hero-bg {
+			@include mix.heroImages('../img/aboutuss-big.jpg');
+		}
 
-		&__info{
-
+		&__info {
 			&-description {
 				text-align: justify;
 			}
 		}
-		
 	}
 }
