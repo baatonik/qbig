@@ -13,6 +13,101 @@ const expandableSliderItems = document.querySelectorAll(
 );
 const accordionBtns = document.querySelectorAll('.accordion-btn');
 const navBarLogo = document.querySelector('.navbar__logo');
+const allGalleryImages = document.querySelectorAll('.gallery__container img');
+const lightbox = document.querySelector('.lightbox-mini');
+const closeLightboxBtn = document.querySelector('.lightbox-mini__close-btn');
+const prevLightboxBtn = document.querySelector('.lightbox-mini__previous-btn');
+const nextLightboxBtn = document.querySelector('.lightbox-mini__next-btn');
+const imgSlide = document.querySelector('.lightbox-mini__img');
+const imgsGalleryNameMap = new Map();
+const body = document.body;
+
+let selectedGalleryName;
+let index = 0;
+
+//handle gallery
+const selectImg = (e) => {
+	const target = e.target.dataset;
+	selectedGalleryName = target.galleryName;
+	index = parseInt(target.gallerySlideNum);
+	showImg(selectedGalleryName, index);
+	showLightbox();
+};
+
+const showImg = (galleryName, imgNum) => {
+	const displayedImg = document.querySelector(
+		`[data-gallery-name='${galleryName}'][data-gallery-slide-num='${imgNum}']`
+	);
+	const displayedImgPath = displayedImg.getAttribute('src');
+	imgSlide.setAttribute('src', displayedImgPath);
+	loadImagesInGalleryToMap(galleryName);
+};
+
+const loadImagesInGalleryToMap = (galleryName) => {
+	const allImagesInGallery = document.querySelectorAll(
+		`[data-gallery-name='${galleryName}']`
+	);
+
+	allImagesInGallery.forEach((image) => {
+		imgsGalleryNameMap.set(
+			parseInt(image.dataset.gallerySlideNum),
+			image.getAttribute('src')
+		);
+	});
+};
+
+const showLightbox = () => {
+	burgerBtn.style.display = 'none';
+	nav.style.display = 'none';
+	body.style.overflow = 'hidden';
+	lightbox.style.display = 'block';
+};
+
+const closeLightbox = () => {
+	if (window.innerWidth >= 768) {
+		nav.style.display = 'flex';
+	} else {
+		burgerBtn.style.display = 'block';
+	}
+
+	imgsGalleryNameMap.clear();
+	body.style.overflow = 'visible';
+	lightbox.style.display = 'none';
+};
+
+const changeSlide = (n) => {
+	index += n;
+
+	if (index > imgsGalleryNameMap.size - 1) {
+		index = 0;
+	}
+
+	if (index < 0) {
+		index = imgsGalleryNameMap.size - 1;
+	}
+
+	imgSlide.setAttribute('src', imgsGalleryNameMap.get(index));
+};
+
+const zoomImg = (e) => {
+	const x = e.clientX;
+	const y = e.clientY;
+
+	const imgX = imgSlide.offsetLeft;
+	const imgY = imgSlide.offsetTop;
+
+	const newX = (imgX - x) * -1;
+	const newY = (imgY - y) * -1;
+
+	imgSlide.style.transformOrigin = `${newX}px ${newY}px`;
+
+	imgSlide.classList.add('zoom-img');
+};
+
+const resetImg = () => {
+	imgSlide.classList.remove('zoom-img');
+	imgSlide.removeEventListener('mousemove', zoomImg);
+};
 
 //intersection observer
 const shortObserverOptions = {
@@ -45,14 +140,14 @@ function handleObserver(entries) {
 //navigation handle
 const handleNav = () => {
 	nav.classList.toggle('nav--active');
-	document.body.classList.toggle('sticky-body');
+	body.classList.toggle('sticky-body');
 	buttonLines.forEach((line) => {
 		line.classList.toggle('active-line');
 	});
 	allNavItems.forEach((item) => {
 		item.addEventListener('click', () => {
 			nav.classList.remove('nav--active');
-			document.body.classList.remove('sticky-body');
+			body.classList.remove('sticky-body');
 			deleteAnimation();
 		});
 	});
@@ -62,7 +157,7 @@ const handleNav = () => {
 const handleNavBarLogo = () => {
 	if (nav.classList.contains('nav--active')) {
 		nav.classList.remove('nav--active');
-		document.body.classList.remove('sticky-body');
+		body.classList.remove('sticky-body');
 		deleteAnimation();
 		resetBurgerBtn();
 	}
@@ -187,4 +282,18 @@ shortSections.forEach((section) => {
 longSections.forEach((section) => {
 	observerLongSections.observe(section);
 });
+allGalleryImages.forEach((img) => {
+	img.addEventListener('click', selectImg);
+});
+closeLightboxBtn.addEventListener('click', closeLightbox);
+prevLightboxBtn.addEventListener('click', () => {
+	changeSlide(-1);
+});
+nextLightboxBtn.addEventListener('click', () => {
+	changeSlide(1);
+});
+imgSlide.addEventListener('click', () => {
+	imgSlide.addEventListener('mousemove', zoomImg);
+});
+imgSlide.addEventListener('mouseout', resetImg);
 window.addEventListener('click', clickOutsideAccordion);
