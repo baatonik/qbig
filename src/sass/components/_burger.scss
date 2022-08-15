@@ -17,7 +17,7 @@
 	transition: box-shadow 0.3s;
 	z-index: 1000;
 
-	&:focus-visible{
+	&:focus-visible {
 		box-shadow: 0 0 0 1px c.$menu-hover;
 	}
 

@@ -4,6 +4,7 @@ const cssnano = require('gulp-cssnano');
 const autoprefixer = require('gulp-autoprefixer');
 const rename = require('gulp-rename');
 const babel = require('gulp-babel');
+const ts = require('gulp-typescript');
 const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
 const sourcemaps = require('gulp-sourcemaps');
@@ -15,6 +16,7 @@ const kit = require('gulp-kit');
 const paths = {
 	sass: './src/sass/**/*.scss',
 	js: './src/js/**/*.js',
+	ts: './src/ts/**/*.ts',
 	img: './src/img/*',
 	imgIcons: './src/img/icons/*',
 	imgExpandSlider: './src/img/expandable_slider/*',
@@ -26,6 +28,7 @@ const paths = {
 	imgGalleryTestingMachine: './src/img/gallery/testing_machine/*',
 	sassDest: './dist/css',
 	jsDest: './dist/js',
+	tsDest: './dist/ts',
 	imgDest: './dist/img',
 	imgIconsDest: './dist/img/icons',
 	imgExpandSliderDest: './dist/img/expandable_slider',
@@ -63,6 +66,22 @@ function javaScript(done) {
 		.pipe(rename({ suffix: '.min' }))
 		.pipe(sourcemaps.write())
 		.pipe(dest(paths.jsDest));
+	done();
+}
+
+function typeScript(done){
+	src(paths.ts)
+		.pipe(sourcemaps.init())
+		.pipe(
+			(ts({
+				noImplicitAny: true,
+				target:'ES6',
+			}))
+		)
+		.pipe(uglify())
+		.pipe(rename({ suffix: '.min' }))
+		.pipe(sourcemaps.write())
+		.pipe(dest(paths.tsDest));
 	done();
 }
 
@@ -107,8 +126,8 @@ function startBrowserSync(done) {
 function watchForChanges(done) {
 	watch('./*.html').on('change', reload);
 	watch(
-		[paths.html, paths.sass, paths.js],
-		parallel(handleKits, sassCompiler, javaScript)
+		[paths.html, paths.sass, paths.js, paths.ts],
+		parallel(handleKits, sassCompiler, javaScript, typeScript)
 	).on('change', reload);
 	watch(paths.img, convertImages).on('change', reload);
 	watch(paths.imgExpandSlider, convertImages).on('change', reload);
@@ -132,6 +151,7 @@ const mainFunctions = parallel(
 	handleKits,
 	sassCompiler,
 	javaScript,
+	typeScript,
 	convertImages
 );
 
