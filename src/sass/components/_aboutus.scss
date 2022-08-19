@@ -17,7 +17,7 @@
 	}
 
 	&__info {
-		padding: s.$m1 s.$m1;
+		padding: s.$m1;
 		text-align: center;
 
 		&-description {
@@ -61,6 +61,7 @@
 @media (min-width: 576px) {
 	.aboutus {
 		&__info {
+			padding: s.$m2;
 			margin-bottom: 4em;
 
 			&-description {

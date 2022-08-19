@@ -206,38 +206,6 @@ const handleBgColor = (item) => {
 	expandableSlider.setAttribute('data-bg', slide);
 };
 
-//AOS settings
-AOS.init({
-	startEvent: 'DOMContentLoaded',
-	offset: 200,
-	once: true,
-});
-
-//Slick settings
-$('.projects-carousel').slick({
-	arrows: false,
-	autoplay: true,
-	mobileFirst: true,
-	slidesToShow: 1,
-	slidesToScroll: 1,
-	dots: true,
-	pauseOnHover: true,
-	responsive: [
-		{
-			breakpoint: 484,
-			settings: {
-				slidesToShow: 2,
-			},
-		},
-		{
-			breakpoint: 768,
-			settings: {
-				slidesToShow: 3,
-			},
-		},
-	],
-});
-
 //accordion handle
 function openAccordionItems() {
 	if (!this.nextElementSibling.classList.contains('active')) {

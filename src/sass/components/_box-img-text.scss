@@ -23,8 +23,8 @@
 		font-family: 'Poppins', sans-serif;
 		margin-bottom: s.$m2;
 		z-index: 9000;
-		padding: 1em;
-		border-radius: 8px;
+		padding: s.$m2;
+		border-radius: s.$brstandard;
 
 		strong {
 			font-size: fs.$smedium;
